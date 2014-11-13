@@ -1,0 +1,161 @@
+package hello;
+
+import "matrix.proto";
+option java_package = "com.hello.suripu.api.input";
+option java_outer_classname = "InputProtos";
+// option optimize_for = SPEED;
+
+
+message SensorSampleBatch {
+    message  SensorSample {
+        enum SensorType {
+            AMBIENT_TEMPERATURE = 0;
+            AMBIENT_HUMIDITY = 1;
+            AMBIENT_LIGHT = 2;
+            AMBIENT_DECIBELS = 3;
+            AMBIENT_AIR_QUALITY = 4;
+            GPS = 5;
+            PHONE_ACCELERATION = 6;
+            PHONE_STEP_COUNT = 7;
+        }
+
+        optional SensorType sensor_type = 1;
+        optional int32 timestamp = 2;
+        optional bytes value = 3;
+
+    }
+
+    repeated SensorSample samples = 1;
+    optional string device_id = 2;
+}
+
+message MotionSensorBatch {
+
+    enum Manufacturer {
+        HELLO = 0;
+    }
+
+    message MotionSensor {
+        optional int64 timestamp = 1;
+        optional int32 value = 2;
+    }
+
+    optional Manufacturer manufacturer = 1;
+    repeated MotionSensor samples = 2;
+}
+
+message TrackerDataBatch {
+
+    message  TrackerData {
+        optional string tracker_id = 1;  // Do you think this is a good idea?
+        optional int64 timestamp = 2;
+        optional int32 offset_millis = 3;
+        optional int32 svm_no_gravity = 4;
+
+    }
+
+    repeated TrackerData samples = 1;
+
+}
+
+
+message SimpleSensorBatch {
+    message GpsInfo {
+        optional float latitude = 1;
+        optional float longitude = 2;
+        optional float accuracy = 3;
+        optional float speed = 4;
+        optional string provider = 5;
+    }
+
+    message SimpleSensorSample {
+        optional int64 timestamp = 1;
+        optional float ambient_temperature = 2; // deprecated
+        optional float ambient_humidity = 3; // deprecated
+        optional float ambient_light = 4; // deprecated
+        optional float ambient_decibels = 5;
+        optional float ambient_air_quality = 6; // deprecated
+        optional bytes device_data = 7;   //
+        optional bytes device_data_signature = 8;
+        optional float sound_amplitude = 9;
+
+        optional GpsInfo gps = 10;
+        optional int32 offset_millis = 11;
+    }
+
+    optional string device_id = 1;
+    repeated SimpleSensorSample samples = 2;
+
+}
+
+
+message ActivationRequest {
+    optional string device_id = 1;
+    optional string account_id = 2;
+    optional int64 timestamp = 3;
+    optional string firmware_version = 4;
+    optional bytes signature = 5;
+}
+
+
+message ActivationResponse {
+    optional bool success = 1;
+    // TODO: do we need retry / rate-limiting exposed here?
+    // TODO: do we need another proof?
+}
+
+message SyncRequest {
+    optional string device_id = 1; // deprecated
+    optional string firmware_version = 2;
+    optional bytes signature = 3;
+    optional string something = 4;
+}
+
+
+// TODO:
+message PillData {
+    optional string pill_id = 1;
+    optional string account_id = 2;
+    optional bytes  data = 3;
+}
+
+// pill data msg in Kinesis
+message PillDataKinesis {
+    optional string pill_id = 1;
+    optional string account_id = 2;
+
+    optional int64 timestamp = 3;
+    optional int64 value = 4;   // data in milli-g
+    optional int32 offsetMillis = 5;
+    optional bytes encryptedData = 6;
+    optional int32 batteryLevel = 7;
+    optional int32 firmwareVersion = 8;
+    optional int64 pillIdLong = 9;
+    optional int64 accountIdLong = 10;
+    optional int32 upTime = 11;
+}
+
+message PillBlobHeader {
+    optional string first_sequence_number = 1;
+    optional string last_sequence_number = 2;
+    optional string first_sample_date = 3;
+    optional string last_sample_date = 4;
+    optional bytes compressed_bitmap_account_ids = 5;
+    optional string data_file_name = 6;
+    optional int32 num_items = 7;
+}
+
+
+message PillBlob {
+    repeated PillData items = 1;
+}
+
+message EventBatch{
+    message EventItem {
+        optional int64 start_timestamp = 1;
+        optional int64 end_timestamp = 2;
+        optional int32 offsetMillis = 3;
+    }
+
+    repeated EventItem events = 1;
+}
