@@ -51,6 +51,12 @@ enum wifi_connection_state {
 	IP_RETRIEVED = 3;
 }
 
+enum led_demo_state {
+	FADE_IN = 0;
+	FADE_OUT = 1;
+	RAINBOW = 2;
+}
+
 message pill_data {
 	required string device_id = 1;
 	optional int32 battery_level = 2;
@@ -84,6 +90,7 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_PILL_DFU_BEGIN = 19;
 	    MORPHEUS_COMMAND_FACTORY_RESET = 20;
 	    MORPHEUS_COMMAND_PILL_SHAKES = 21;
+	    MORPHEUS_COMMAND_LED_DEMO = 22;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
@@ -102,6 +109,8 @@ message MorpheusCommand {
 	optional wifi_endpoint.sec_type security_type = 15;
 	optional pill_data pill_data = 16;
 	optional wifi_connection_state wifi_connection_state = 17;
+	optional led_demo_state led_demo_state = 18;
+	optional uint32 led_demo_alpha = 19;
 }
 
 message batched_pill_data {
