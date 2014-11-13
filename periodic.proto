@@ -1,6 +1,7 @@
 package hello;
 
 option java_package = "com.hello.suripu.api.input";
+option java_outer_classname = "DataInputProtos";
 
 message periodic_data {
     optional int32 unix_time=1;

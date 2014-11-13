@@ -1,6 +1,7 @@
 package hello;
 
 option java_package = "com.hello.suripu.api.audio";
+option java_outer_classname = "MatrixProtos";
 
 message MatrixClientMessage {
   optional bytes mac = 1;

@@ -1,8 +1,9 @@
 package hello;
 
 option java_package = "com.hello.suripu.api.input";
+option java_outer_classname = "OutputProtos";
 
-import "matrix.proto";
+import "matrix_proto.proto";
 
 message SyncResponse {
 

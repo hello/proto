@@ -1,6 +1,7 @@
 package hello;
 
 option java_package = "com.hello.suripu.api.ble";
+option java_outer_classname = "SenseCommandProtos";
 
 enum ErrorType {
 	TIME_OUT = 0;              // Internal time out, no implemented yet.

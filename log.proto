@@ -1,10 +1,10 @@
 package hello;
 
 option java_package = "com.hello.suripu.api.input";
-
+option java_outer_classname = "LogProtos";
 //Logging protobuf to send to server
 
-message SenseLog {
+message sense_log {
     optional int32 unix_time = 1;
     optional string device_id = 2;
     optional string text = 3;
