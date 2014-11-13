@@ -1,3 +1,8 @@
+package hello;
+
+option java_package = "com.hello.suripu.api.audio";
+option java_outer_classname = "AudioProtos";
+
 message audio_data {
    optional bytes features=1;
    optional int32 feature_version=2;
