@@ -3,7 +3,7 @@
 option java_package = "com.hello.suripu.api.input";
 option java_outer_classname = "OutputProtos";
 
-import "matrix_proto.proto";
+import "matrix.proto";
 
 message SyncResponse {
 

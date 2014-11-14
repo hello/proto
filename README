@@ -1,12 +1,16 @@
 kodobanin: 
-    ~/nanopb-0.2.8-macosx-x86/generator-bin/protoc --nanopb_out=. *.proto
+    cd proto
+    rm *.pb.c *.pb.h
+    ~/nanopb-0.2.8-macosx-x86/generator-bin/protoc --nanopb_out=. morpheus_ble.proto
 
 kitsune:   
-    rm *.c *.h
+    cd proto
+    rm *.pb.c *.pb.h
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. output.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. morpheus_ble.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. periodic.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. audio_data.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. log.proto
+     ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. matrix.proto
  Java:      
     protoc --java_out=. *.proto
