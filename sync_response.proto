@@ -1,6 +1,6 @@
 //package hello;
 
-option java_package = "com.hello.suripu.api.input";
+option java_package = "com.hello.suripu.api.output";
 option java_outer_classname = "OutputProtos";
 
 import "matrix.proto";
