@@ -1,4 +1,4 @@
-package hello;
+//package hello;
 import "matrix_proto.proto";
 
 option java_package = "com.hello.suripu.api.input";
