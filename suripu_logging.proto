@@ -1,0 +1,38 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.logging";
+option java_outer_classname = "LoggingProtos";
+// option optimize_for = SPEED;
+
+
+message LogMessage {
+    optional string origin = 1;
+    optional string message = 2;
+    optional int64 ts = 3;
+    optional bool production = 4 [default = false];
+}
+
+message HttpRequest {
+    message Header {
+        optional string name = 1;
+        optional string value = 2;
+    }
+    optional string path = 1;
+    optional string access_token = 2;
+    optional int64 account_id = 3;
+    optional int64 application_id = 4;
+    optional int64 timestamp_utc = 5;
+    repeated string required_scopes = 6;
+    repeated string provided_scopes = 7;
+    optional int64 access_token_created_at = 8;
+    optional string user_agent = 9;
+    repeated Header headers = 10;
+}
+
+
+message Registration {
+    optional string device_id = 1;
+    optional int64 timestamp = 2;
+    optional int64 account_id = 3;
+    optional string ip_address = 4;
+}

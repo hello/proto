@@ -1,6 +1,6 @@
 //package hello;
 
-option java_package = "com.hello.suripu.api.input";
+option java_package = "com.hello.suripu.api.logging";
 option java_outer_classname = "LogProtos";
 //Logging protobuf to send to server
 
