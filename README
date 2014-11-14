@@ -6,7 +6,7 @@ kodobanin:
 kitsune:   
     cd proto
     rm *.pb.c *.pb.h
-     ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. output.proto
+     ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. sync_response.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. morpheus_ble.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. periodic.proto
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. audio_data.proto
