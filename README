@@ -14,3 +14,6 @@ kitsune:
      ~/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. matrix.proto
  Java:      
     protoc --java_out=. *.proto
+
+
+Then move the generated file to the right place, or specify the output path using --nanopb_out param.
