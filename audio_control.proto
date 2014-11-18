@@ -1,3 +1,8 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.audio";
+option java_outer_classname = "AudioControlProtos";
+
 message AudioClassifierMessage {
     enum ClassifierType {
         LINEARSVM = 0;
