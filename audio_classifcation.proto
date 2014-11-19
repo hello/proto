@@ -1,0 +1,33 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.audio";
+option java_outer_classname = "AudioClassificationProtos";
+
+message audio_class_result {
+  enum audio_class {
+    UNKNOWN = 0;
+    NULL = 1;
+    TALKING = 2;
+    CRYING = 3;
+    SNORING = 4;
+    VEHICLE = 5;
+  }
+
+  repeated float probability       = 1; //probability vector
+  repeated audio_class classes     = 2; //which element in prob vector is what
+  optional audio_class decision    = 3; //the class on which we decided
+}
+
+message audio_energy_result {
+  optional float max_decibel_over_background = 1;
+  optional int32 num_disturbances = 2; //number of times the energy "significantly" exceeded the background noise
+}
+
+message audio_classifcation_message {
+  optional string device_id                      = 1;
+  optional int32 unix_time                       = 2;//form the client -- wall time UTC, seconds since 1970
+  optional string classifer_key                  = 3;//which S3 key we used for this classifer
+  optional audio_energy_result energies          = 4;//summary of energy statistics 
+  optional audio_class_result classes            = 5;//output of classifer
+
+}
