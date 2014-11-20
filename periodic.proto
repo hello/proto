@@ -19,4 +19,6 @@ message periodic_data {
     optional int32 dust_variability=13;
     optional int32 dust_max=14;
     optional int32 dust_min=15;
+    optional int32 wave_count = 16;
+    optional int32 hold_count = 17;
 }
