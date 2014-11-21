@@ -79,7 +79,7 @@ message SyncResponse {
 	repeated FileDownload files = 13;
 	optional bool reset_to_factory_fw = 14;
     optional AudioControl audio_control = 15;
-	
+	optional uint32 unix_time = 16;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
