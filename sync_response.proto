@@ -57,6 +57,32 @@ message SyncResponse {
 		optional int32 alpha = 8;
     }
 
+    message LEDAction {
+		// LED animation types
+        enum LEDActionType {
+            FLASH = 0;
+            GLOW = 1;
+            PULSAR = 2;
+            TRIPPY = 3;
+        }
+
+		// LED colors
+        enum LEDActionColor {
+            RED = 0;
+            GREEN = 1;
+            BLUE = 2;
+            LT_BLUE = 3;
+            YELLOW = 4;
+            WARN = 5;
+            ALERT = 6;
+            WHITE = 7;
+        }
+
+        optional LEDActionType type = 1;
+        optional LEDActionColor color = 2;
+        optional int32 duration = 3; // Total animation duration
+    }
+
     enum RoomConditions {
         IDEAL = 1;
         WARNING = 2;
@@ -79,6 +105,7 @@ message SyncResponse {
 	repeated FileDownload files = 13;
 	optional bool reset_to_factory_fw = 14;
     optional AudioControl audio_control = 15;
+    optional LEDAction led_action = 16;
 	
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
