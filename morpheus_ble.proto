@@ -84,6 +84,7 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_PILL_DFU_BEGIN = 19;
 	    MORPHEUS_COMMAND_FACTORY_RESET = 20;
 	    MORPHEUS_COMMAND_PILL_SHAKES = 21;
+	    MORPHEUS_COMMAND_SYNC_DEVICE_ID = 22;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
