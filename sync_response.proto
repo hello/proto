@@ -100,6 +100,7 @@ message SyncResponse {
     optional AudioControl audio_control = 15;
 	optional uint32 unix_time = 16;
     optional LEDAction led_action = 17;
+	optional bytes mac = 18;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
