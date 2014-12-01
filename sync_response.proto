@@ -101,6 +101,7 @@ message SyncResponse {
 	optional uint32 unix_time = 16;
     optional LEDAction led_action = 17;
 	optional bytes mac = 18;
+	optional int32 batch_size = 19;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
