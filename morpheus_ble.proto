@@ -85,6 +85,8 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_FACTORY_RESET = 20;
 	    MORPHEUS_COMMAND_PILL_SHAKES = 21;
 	    MORPHEUS_COMMAND_SYNC_DEVICE_ID = 22;
+	    MORPHEUS_COMMAND_PHONE_BLE_CONNECTED = 23;
+	    MORPHEUS_COMMAND_PHONE_BLE_BONDED = 24;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
