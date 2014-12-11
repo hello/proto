@@ -136,10 +136,6 @@ message PillDataKinesis {
     optional int32 upTime = 11;
 }
 
-message BatchPillDataKinesis {
-    repeated PillDataKinesis batch = 1;
-}
-
 message PillBlobHeader {
     optional string first_sequence_number = 1;
     optional string last_sequence_number = 2;
