@@ -57,6 +57,26 @@ message SyncResponse {
 		optional int32 alpha = 8;
     }
 
+    message LEDAction {
+        enum LEDActionType {
+            FADEIO = 0;     // quickly fade in color, wait, then quickly fade out
+            GLOW = 1;       // Slowly fade in color for half duration, then slowly fade out
+            THROB = 2;      // repeadedly fade in to color and out again
+            PULSAR = 3;     // Spining pulsar effect with quick fade in color, wait then quick fade out
+            DOUBLE = 4;     // Double spining pulsar effect with quick fade in color, wait then quick fade out
+            SIREN = 5;      // Double spining pulsar with both colors with quick fade in, wait, then quick fade out
+            TRIPPY = 6;     // Randomized LED colors 
+            PARTY = 7;      // Party mode, fade to/from random colors
+            URL = 8;        // URL to a multi color LED blink pattern definition
+        }
+
+        optional LEDActionType type = 1;        // LED Animation type
+        optional string url = 2;                // URL string used when URL type selected
+        optional uint32 color = 3;              // ARGB main color to fade in/out
+        optional uint32 alt_color = 4;          // ARGB alternative color used in SIREN type
+        optional int32 duration_seconds = 6;    // Total animation duration in seconds
+    }
+
     enum RoomConditions {
         IDEAL = 1;
         WARNING = 2;
@@ -80,6 +100,9 @@ message SyncResponse {
 	optional bool reset_to_factory_fw = 14;
     optional AudioControl audio_control = 15;
 	optional uint32 unix_time = 16;
+    optional LEDAction led_action = 17;
+	optional bytes mac = 18;
+	optional int32 batch_size = 19;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }

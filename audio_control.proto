@@ -43,10 +43,11 @@ message AudioControl {
 //    optional Matrix audio_recording_classifier = 5;
 //    optional Matrix audio_recording_hmm = 6;
 
+
     optional AudioCaptureAction audio_capture_action = 8;
     optional AudioClassifierMessage audio_capture_classifier = 9;
     optional AudioClassifierMessage audio_capture_hmm = 10;
-
+    optional AudioCaptureAction audio_save_raw_data = 11;
 }
 
 
