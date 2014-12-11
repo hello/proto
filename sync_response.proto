@@ -65,8 +65,9 @@ message SyncResponse {
             PULSAR = 3;     // Spining pulsar effect with quick fade in color, wait then quick fade out
             DOUBLE = 4;     // Double spining pulsar effect with quick fade in color, wait then quick fade out
             SIREN = 5;      // Double spining pulsar with both colors with quick fade in, wait, then quick fade out
-            TRIPPY = 6;     // Randomized LED colors each cycle
-            URL = 7;        // URL to a multi color LED blink pattern definition
+            TRIPPY = 6;     // Randomized LED colors 
+            PARTY = 7;      // Party mode, fade to/from random colors
+            URL = 8;        // URL to a multi color LED blink pattern definition
         }
 
         optional LEDActionType type = 1;        // LED Animation type
