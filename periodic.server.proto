@@ -31,7 +31,7 @@ message batched_periodic_data {
 
 
 message BatchPeriodicDataWorker {
-    optional batched_periodic_data = 1;
+    optional batched_periodic_data data = 1;
     optional string ip_address = 2;
     optional int64 received_at = 3;
 }
