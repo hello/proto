@@ -21,6 +21,9 @@ message periodic_data {
     optional int32 dust_min=15;
     optional int32 wave_count = 16;
     optional int32 hold_count = 17;
+    optional int32 audio_num_disturbances = 18;
+    optional int32 audio_peak_disturbance_energy_db = 19;
+    optional int32 audio_peak_background_energy_db = 20;
 }
 
 message batched_periodic_data {
