@@ -48,6 +48,7 @@ message AudioControl {
     optional AudioClassifierMessage audio_capture_classifier = 9;
     optional AudioClassifierMessage audio_capture_hmm = 10;
     optional AudioCaptureAction audio_save_raw_data = 11;
+    optional AudioCaptureAction audio_save_features = 12;
 }
 
 
