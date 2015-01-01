@@ -10,6 +10,7 @@ message LogMessage {
     optional string message = 2;
     optional int64 ts = 3;
     optional bool production = 4 [default = false];
+    optional int32 level = 5;
 }
 
 message HttpRequest {
@@ -35,4 +36,12 @@ message Registration {
     optional int64 timestamp = 2;
     optional int64 account_id = 3;
     optional string ip_address = 4;
+}
+
+message DecryptionError {
+    optional string device_id = 1;
+    optional string keyHex = 2;
+    optional int64  ts = 3;
+    optional bytes  request_body = 4;
+    optional string other = 5;
 }
