@@ -85,15 +85,18 @@ message SyncResponse {
 
     // TODO: failure cases (timeout, exponential backoff, etc.)
 
-    optional int32 upload_cycle = 1;
-    optional int32 sync_cycle = 2;
-    optional int32 acc_scan_cyle = 3;
-    optional int32 acc_sampling_interval = 4;
-    optional int32 device_sampling_interval = 5;
+    // WARNING: Please do not remove fields that were commented out,
+    // It is a reminder we should not reuse those indexes.
+
+    //optional int32 upload_cycle = 1;
+    //optional int32 sync_cycle = 2;
+    //optional int32 acc_scan_cyle = 3;
+    //optional int32 acc_sampling_interval = 4;
+    //optional int32 device_sampling_interval = 5;
     optional Alarm alarm = 6;
-    optional PairingAction pairing_action = 7;
+    //optional PairingAction pairing_action = 7;
     optional WhiteNoise white_noise = 8;
-    optional FlashAction flash_action = 9;
+    //optional FlashAction flash_action = 9;
     optional bool reset_device = 10;
     optional RoomConditions room_conditions = 12;
 	repeated FileDownload files = 13;
@@ -101,7 +104,7 @@ message SyncResponse {
     optional AudioControl audio_control = 15;
 	optional uint32 unix_time = 16;
     optional LEDAction led_action = 17;
-	optional bytes mac = 18;
+	//optional bytes mac = 18;
 	optional int32 batch_size = 19;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
