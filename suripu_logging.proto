@@ -13,6 +13,12 @@ message LogMessage {
     optional int32 level = 5;
 }
 
+
+message BatchLogMessage {
+    repeated LogMessage messages = 1;
+    optional string app_version = 2;
+}
+
 message HttpRequest {
     message Header {
         optional string name = 1;
