@@ -11,12 +11,12 @@ message LogMessage {
     optional int64 ts = 3;
     optional bool production = 4 [default = false];
     optional int32 level = 5;
-    optional string app_version = 6;
 }
 
 
 message BatchLogMessage {
     repeated LogMessage messages = 1;
+    optional string app_version = 2;
 }
 
 message HttpRequest {
