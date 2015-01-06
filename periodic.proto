@@ -31,4 +31,5 @@ message batched_periodic_data {
 	repeated periodic_data data = 1;
 	required string device_id = 2;
 	required int32 firmware_version=3;
+    optional int32 uptime_in_second = 4;
 }
