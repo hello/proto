@@ -116,3 +116,7 @@ message SyncResponse {
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
+
+message BatchedPillSettings {
+    repeated SyncResponse.PillSettings pill_settings = 1;
+}
