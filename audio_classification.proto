@@ -23,10 +23,10 @@ message audio_energy_result {
   optional int32 num_disturbances = 2; //number of times the energy "significantly" exceeded the background noise
 }
 
-message audio_classifcation_message {
+message audio_classification_message {
   optional string device_id                      = 1;
   optional int32 unix_time                       = 2;//form the client -- wall time UTC, seconds since 1970
-  optional string classifer_key                  = 3;//which S3 key we used for this classifer
+  optional string classifier_key                  = 3;//which S3 key we used for this classifer
   optional audio_energy_result energies          = 4;//summary of energy statistics 
   optional audio_class_result classes            = 5;//output of classifer
 
