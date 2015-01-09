@@ -1,0 +1,19 @@
+kodobanin: 
+    cd proto
+    rm *.pb.c *.pb.h
+    ./tools/nanopb-0.2.8-macosx-x86/generator-bin/protoc --nanopb_out=. morpheus_ble.proto
+
+kitsune:   
+    cd proto
+    rm *.pb.c *.pb.h
+     ./tools/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. sync_response.proto
+     ./tools/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. morpheus_ble.proto
+     ./tools/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. periodic.proto
+     ./tools/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. audio_data.proto
+     ./tools/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. log.proto
+     ./tools/nanopb-0.3.1-macosx-x86/generator-bin/protoc --nanopb_out=. matrix.proto
+ Java:      
+    protoc --java_out=. *.proto
+
+
+Then move the generated file to the right place, or specify the output path using --nanopb_out param.
