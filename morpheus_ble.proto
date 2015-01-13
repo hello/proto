@@ -103,8 +103,8 @@ message MorpheusCommand {
 	optional string wifiName = 6;
 	optional string wifiSSID = 7;
 	optional string wifiPassword = 8;
-	optional int32 batteryLevel = 9;
-	optional int32 uptime = 10;
+	// optional int32 batteryLevel = 9;  // Removed field, dont reuse
+	// optional int32 uptime = 10;       // Removed field, dont reuse
 	// optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
 	// optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
 	optional int32 firmwareVersion = 13;
@@ -112,6 +112,7 @@ message MorpheusCommand {
 	optional wifi_endpoint.sec_type security_type = 15;
 	optional pill_data pill_data = 16;
 	optional wifi_connection_state wifi_connection_state = 17;
+	optional int32 ble_bond_count = 18;
 }
 
 message batched_pill_data {
