@@ -82,6 +82,7 @@ message SyncResponse {
         IDEAL = 1;
         WARNING = 2;
         ALERT = 3;
+        IDEAL_EXCLUDING_LIGHT = 4;
     }
 
     message PillSettings {
