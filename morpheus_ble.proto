@@ -50,7 +50,6 @@ enum wifi_connection_state {
 	WLAN_CONNECTED = 2;
 	IP_RETRIEVED = 3;
 }
-
 message pill_data {
 	required string device_id = 1;
 	optional int32 battery_level = 2;
@@ -94,6 +93,7 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_GET_NEXT_WIFI_AP = 29;
 	    MORPHEUS_COMMAND_LED_OPERATION_SUCCESS = 30;
 	    MORPHEUS_COMMAND_PUSH_DATA_AFTER_SET_TIMEZONE = 31;
+	    MORPHEUS_COMMAND_SET_COUNTRY_CODE = 32;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
@@ -113,6 +113,7 @@ message MorpheusCommand {
 	optional pill_data pill_data = 16;
 	optional wifi_connection_state wifi_connection_state = 17;
 	optional int32 ble_bond_count = 18;
+	optional string country_code = 19;
 }
 
 message batched_pill_data {
