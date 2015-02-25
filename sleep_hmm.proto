@@ -36,5 +36,5 @@ message SleepHmm {
   repeated BedMode bed_mode_of_states = 5;
   optional int32 num_states = 6;
   repeated double state_transition_matrix = 7;
- 
+  repeated double initial_state_probabilities = 8; 
 }
