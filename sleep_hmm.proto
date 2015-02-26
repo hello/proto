@@ -1,0 +1,52 @@
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "SleepHmmProtos";
+
+/* Descriptions of the sleep states (by index)  */
+enum SleepMode {
+  SLEEP = 0;
+  WAKE = 1;
+}
+
+enum BedMode  {
+  ON_BED = 0;
+  OFF_BED = 1;
+}
+
+enum SleepDepth {
+  NOT_APPLICABLE = 0; 
+  LIGHT = 1; //just before wakeup (lights are on, but you're still sleeping)
+  REGULAR = 2; //"normal" sleep
+  DISTURBED = 3;//tossing turning, or probably just not sleeping
+}
+
+/* Observational model types  */
+message PoissonModel {
+  required double mean = 1;
+}
+
+message DiscreteAlphabetModel {
+  repeated double probabilities = 1;
+}
+
+/* Description of each state    */
+message StateModel {
+  optional PoissonModel light = 1;
+  optional PoissonModel motion_count = 2;
+  optional DiscreteAlphabetModel waves = 3;
+
+  optional SleepMode sleep_mode = 4;
+  optional BedMode bed_mode = 5;
+  optional SleepDepth sleep_depth = 6;
+  
+}
+
+
+
+message SleepHmm {
+  optional string user_id = 1;
+  optional string source = 2;
+  repeated StateModel states = 3;
+  optional int32 num_states = 4;
+  repeated double state_transition_matrix = 5;
+  repeated double initial_state_probabilities = 6; 
+}
