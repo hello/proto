@@ -20,24 +20,63 @@ enum SleepDepth {
 }
 
 /* Observational model types  */
+
+/* Poisson discrete distriubtion
+  
+  http://en.wikipedia.org/wiki/Poisson_distribution 
+
+  valid on range [0,1,2...inf]
+   */
 message PoissonModel {
   required double mean = 1;
 }
 
+/*  Alphabet model symbol P(A)  = 0.3, P(B) = 0.7, etc.
+    as a vector... so P(i=0) = 0.3, P(i=1) = 0.7, etc.   
+ */
 message DiscreteAlphabetModel {
   repeated double probabilities = 1;
 }
 
+/*  Gamma distribution
+
+    http://en.wikipedia.org/wiki/Gamma_distribution
+
+    valid on range = [0,inf]
+
+    My parameters are different from that of the wiki's
+    here's the conversion:
+
+    variance = stddev^2
+    theta = variance / mean
+    k = mean / theta
+
+    or alpha = k
+       beta = 1/theta
+
+*/
+message GammaModel {
+  double mean;
+  double stddev;
+}
+
 /* Description of each state    */
 message StateModel {
-  optional PoissonModel light = 1;
-  optional PoissonModel motion_count = 2;
-  optional DiscreteAlphabetModel waves = 3;
+//deprecated
+//  optional PoissonModel light = 1;
+//  optional PoissonModel motion_count = 2;
+//  optional DiscreteAlphabetModel waves = 3;
 
+  
   optional SleepMode sleep_mode = 4;
   optional BedMode bed_mode = 5;
   optional SleepDepth sleep_depth = 6;
-  
+
+    
+  optional GammaModel light = 11;
+  optional PoissonModel motion_count = 12;
+  optional DiscreteAlphabetModel disturbances = 13;
+
 }
 
 
