@@ -56,8 +56,8 @@ message DiscreteAlphabetModel {
 
 */
 message GammaModel {
-  double mean;
-  double stddev;
+  required double mean = 1;
+  required double stddev = 2;
 }
 
 /* Description of each state    */
