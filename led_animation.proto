@@ -1,0 +1,13 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.anim";
+option java_outer_classname = "AnimProtos";
+
+// LED pattern response definition for URL in sync_response LEDAction
+message anim_data {
+   optional int32 num_colors=1;     // number of color map entries.
+   optional bytes colors=2;         // Color map 3-bytes (r,g,b) per entry
+   
+   optional int32 num_patterns=3;   // Number of 12 byte patterns
+   optional bytes patterns=4;       // Each byte is index into color map (one byte per LED)
+}
