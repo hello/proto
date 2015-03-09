@@ -11,12 +11,20 @@ message LogMessage {
     optional int64 ts = 3;
     optional bool production = 4 [default = false];
     optional int32 level = 5;
+    optional string device_id = 6;
 }
 
 
 message BatchLogMessage {
+
+    enum LogType {
+        APPLICATION_LOG = 0;
+        SENSE_LOG = 1;
+    }
+
     repeated LogMessage messages = 1;
     optional string app_version = 2;
+    optional LogType log_type = 3;
 }
 
 message HttpRequest {
