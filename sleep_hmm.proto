@@ -76,7 +76,7 @@ message StateModel {
   optional GammaModel light = 11;
   optional PoissonModel motion_count = 12;
   optional DiscreteAlphabetModel disturbances = 13;
-  optional GammaModel log_count_count = 14;
+  optional GammaModel log_sound_count = 14;
 }
 
 
@@ -88,4 +88,9 @@ message SleepHmm {
   optional int32 num_states = 4;
   repeated double state_transition_matrix = 5;
   repeated double initial_state_probabilities = 6; 
+  optional double audio_disturbance_threshold_db = 7;
+  optional double pill_magnitude_disturbance_threshold_lsb = 8;
+  
+
+
 }
