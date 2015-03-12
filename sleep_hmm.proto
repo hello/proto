@@ -76,7 +76,7 @@ message StateModel {
   optional GammaModel light = 11;
   optional PoissonModel motion_count = 12;
   optional DiscreteAlphabetModel disturbances = 13;
-
+  optional GammaModel log_count_count = 14;
 }
 
 
