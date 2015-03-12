@@ -59,3 +59,11 @@ message DecryptionError {
     optional bytes  request_body = 4;
     optional string other = 5;
 }
+
+
+message ProvisionRequest {
+    optional bytes body = 1;
+    optional string serial_number = 2;
+    optional int64 ts = 3;
+    optional string ip_address = 4;
+}
