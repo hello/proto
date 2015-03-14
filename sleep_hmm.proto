@@ -76,7 +76,8 @@ message StateModel {
   optional GammaModel light = 11;
   optional PoissonModel motion_count = 12;
   optional DiscreteAlphabetModel disturbances = 13;
-
+  optional GammaModel log_sound_count = 14;
+  optional DiscreteAlphabetModel natural_light_filter = 15;
 }
 
 
@@ -86,6 +87,21 @@ message SleepHmm {
   optional string source = 2;
   repeated StateModel states = 3;
   optional int32 num_states = 4;
+
   repeated double state_transition_matrix = 5;
+
   repeated double initial_state_probabilities = 6; 
+
+  optional double audio_disturbance_threshold_db = 7;
+  optional double pill_magnitude_disturbance_threshold_lsb = 8;
+  optional double natural_light_filter_start_hour = 9; //in 24 hours format, so 16.0 is 4pm
+  optional double natural_light_filter_stop_hour = 10; //in 24 hours format, so 4.0 is 4am
+  optional int32 num_model_params = 11;//for computing BIC/AIC
+  optional string model_name = 12;
+
 }
+
+message SleepHmmModelSet {
+  repeated SleepHmm models = 1;
+}
+
