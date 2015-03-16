@@ -98,7 +98,7 @@ message SleepHmm {
   optional double natural_light_filter_stop_hour = 10; //in 24 hours format, so 4.0 is 4am
   optional int32 num_model_params = 11;//for computing BIC/AIC
   optional string model_name = 12;
-
+  optional int32 num_minutes_in_meas_period = 13;
 }
 
 message SleepHmmModelSet {
