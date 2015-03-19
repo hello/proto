@@ -99,6 +99,7 @@ message SleepHmm {
   optional int32 num_model_params = 11;//for computing BIC/AIC
   optional string model_name = 12;
   optional int32 num_minutes_in_meas_period = 13;
+  optional bool enable_interval_search = 14;
 }
 
 message SleepHmmModelSet {
