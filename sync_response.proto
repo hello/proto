@@ -114,6 +114,8 @@ message SyncResponse {
 	optional bytes mac = 18;
 	optional int32 batch_size = 19;
     repeated PillSettings pill_settings = 20;
+    optional bool reset_mcu = 21;
+	optional uint32 upload_log_level = 22;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
