@@ -5,8 +5,8 @@ option java_outer_classname = "LogProtos";
 //Logging protobuf to send to server
 
 enum LogType {
-    UNSTRUCTURED = 1,
-    KEY_VALUE = 2,
+    UNSTRUCTURED = 1;
+    KEY_VALUE = 2;
 }
 
 message sense_log {
