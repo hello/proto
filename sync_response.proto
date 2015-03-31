@@ -90,6 +90,10 @@ message SyncResponse {
         optional uint32 pill_color = 2;
     }
 
+	enum KeyCommand {
+		CHECK_KEY = 0;
+		INDICATE_GOOD = 1;
+	}
     // TODO: failure cases (timeout, exponential backoff, etc.)
 
     // WARNING: Please do not remove fields that were commented out,
@@ -109,13 +113,14 @@ message SyncResponse {
 	repeated FileDownload files = 13;
 	optional bool reset_to_factory_fw = 14;
     optional AudioControl audio_control = 15;
-	optional uint32 unix_time = 16;
-    optional LEDAction led_action = 17;
+	//optional uint32 unix_time = 16;
+    //optional LEDAction led_action = 17;
 	optional bytes mac = 18;
 	optional int32 batch_size = 19;
     repeated PillSettings pill_settings = 20;
     optional bool reset_mcu = 21;
 	optional uint32 upload_log_level = 22;
+	optional KeyCommand key_command = 23;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
