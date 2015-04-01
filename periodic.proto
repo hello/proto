@@ -32,4 +32,5 @@ message batched_periodic_data {
 	required string device_id = 2;
 	required int32 firmware_version=3;
     optional int32 uptime_in_second = 4;
+    optional bool need_key = 5;
 }

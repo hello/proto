@@ -90,10 +90,6 @@ message SyncResponse {
         optional uint32 pill_color = 2;
     }
 
-	enum KeyCommand {
-		CHECK_KEY = 0;
-		INDICATE_GOOD = 1;
-	}
     // TODO: failure cases (timeout, exponential backoff, etc.)
 
     // WARNING: Please do not remove fields that were commented out,
@@ -120,7 +116,7 @@ message SyncResponse {
     repeated PillSettings pill_settings = 20;
     optional bool reset_mcu = 21;
 	optional uint32 upload_log_level = 22;
-	optional KeyCommand key_command = 23;
+	optional bytes key = 23;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
