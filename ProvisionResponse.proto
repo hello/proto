@@ -1,5 +1,0 @@
-
-message ProvisionResponse {
-	optional bytes key = 1;
-	optional bool retry = 2;
-}
