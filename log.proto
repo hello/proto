@@ -4,9 +4,15 @@ option java_package = "com.hello.suripu.api.logging";
 option java_outer_classname = "LogProtos";
 //Logging protobuf to send to server
 
+enum LogType {
+    UNSTRUCTURED = 1;
+    KEY_VALUE = 2;
+}
+
 message sense_log {
     optional int32 unix_time = 1;
     optional string device_id = 2;
     optional string text = 3;
+    optional LogType property = 4;
 }
 
