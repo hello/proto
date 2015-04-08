@@ -109,8 +109,8 @@ message SyncResponse {
 	repeated FileDownload files = 13;
 	optional bool reset_to_factory_fw = 14;
     optional AudioControl audio_control = 15;
-	optional uint32 unix_time = 16;
-    optional LEDAction led_action = 17;
+	//optional uint32 unix_time = 16;
+    //optional LEDAction led_action = 17;
 	optional bytes mac = 18;
 	optional int32 batch_size = 19;
     repeated PillSettings pill_settings = 20;

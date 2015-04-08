@@ -1,0 +1,14 @@
+
+option java_package = "com.hello.suripu.api.provision";
+option java_outer_classname = "ProvisionProtos";
+
+message ProvisionRequest {
+    required string device_id = 1;
+    required bool need_key = 2;
+    required string serial = 3;
+}
+
+message ProvisionResponse {
+    optional bytes key = 1;
+    optional bool retry = 2;
+}
