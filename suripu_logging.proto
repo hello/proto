@@ -50,8 +50,17 @@ message Registration {
     optional int64 timestamp = 2;
     optional int64 account_id = 3;
     optional string ip_address = 4;
+}
+
+message RegistrationLog {
+    optional string sense_id = 1;
+    optional int64 timestamp = 2;
+    optional int64 account_id = 3;
+    optional string ip_address = 4;
     optional string action = 5;
     optional string pill_id = 6;
+    optional string result = 7;
+    optional string info = 8;
 }
 
 message DecryptionError {
