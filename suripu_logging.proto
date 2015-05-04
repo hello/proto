@@ -22,12 +22,14 @@ message BatchLogMessage {
         SENSE_LOG = 1;
         WORKERS_LOG = 2;
         STRUCTURED_SENSE_LOG = 3;
+        ONBOARDING_LOG = 4;
     }
 
     repeated LogMessage messages = 1;
     optional string app_version = 2;
     optional LogType log_type = 3;
     optional int64 received_at = 4;
+    repeated RegistrationLog registration_log = 5;
 }
 
 message HttpRequest {
