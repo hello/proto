@@ -12,11 +12,11 @@ enum ErrorType {
 	DEVICE_NO_MEMORY = 5;      // Device run out of heap
 	INTERNAL_OPERATION_FAILED = 6;
 	NO_ENDPOINT_IN_RANGE = 7;
-	WLAN_CONNECTION_ERROR = 8;
+	WLAN_CONNECTION_ERROR = 8;  //factory reset failed to remove stored wifi endpoint
 	FAIL_TO_OBTAIN_IP = 9;
 	WLAN_ENDPOINT_DELETE_FAILED = 10;
-	INVALID_ACCOUNT_ID = 11;
-	FORCE_DATA_PUSH_FAILED = 12;
+	INVALID_ACCOUNT_ID = 11;    //pair device command doesn't contain a valid account ID
+	FORCE_DATA_PUSH_FAILED = 12;//error from pushing data after MORPHEUS_COMMAND_PUSH_DATA_AFTER_SET_TIMEZONE
 	PROTOBUF_ENCODE_FAILED = 13;
 	PROTOBUF_DECODE_FAILED = 14;
 }
