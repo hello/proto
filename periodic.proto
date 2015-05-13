@@ -4,15 +4,6 @@ option java_package = "com.hello.suripu.api.input";
 option java_outer_classname = "DataInputProtos";
 
 message periodic_data {
-	message wifi_access_point {
-        enum AntennaType {
-            IFA = 1; 
-            PCB = 2;
-        }
-		optional string ssid = 1;
-		optional int32 rssi = 2;
-		optional AntennaType antenna = 3;
-	}
 
     optional int32 unix_time=1;
     optional int32 light=2;
@@ -34,13 +25,22 @@ message periodic_data {
     optional int32 audio_num_disturbances = 18;
     optional int32 audio_peak_disturbance_energy_db = 19;
     optional int32 audio_peak_background_energy_db = 20;
-	optional string connected_ssid = 21;
-    repeated wifi_access_point scan = 22;
 }
 
 message batched_periodic_data {
+	message wifi_access_point {
+		enum AntennaType {
+			IFA = 1;
+			PCB = 2;
+		}
+		optional string ssid = 1;
+		optional int32 rssi = 2;
+		optional AntennaType antenna = 3;
+	}
 	repeated periodic_data data = 1;
 	required string device_id = 2;
 	required int32 firmware_version=3;
-    optional int32 uptime_in_second = 4;
+	optional int32 uptime_in_second = 4;
+	optional string connected_ssid = 5;
+	repeated wifi_access_point scan = 6;
 }
