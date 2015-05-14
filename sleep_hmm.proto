@@ -100,6 +100,8 @@ message SleepHmm {
   optional string model_name = 12;
   optional int32 num_minutes_in_meas_period = 13;
   optional bool enable_interval_search = 14;
+  optional double light_pre_multiplier = 15;
+  optional double light_floor_lux = 16;
 }
 
 message SleepHmmModelSet {
