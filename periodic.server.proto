@@ -27,12 +27,21 @@ message periodic_data {
 }
 
 message batched_periodic_data {
-	repeated periodic_data data = 1;
-	required string device_id = 2;
-	required int32 firmware_version=3;
+    message wifi_access_point {
+	enum AntennaType {
+	    IFA = 1;
+	    PCB = 2;
+        }
+	optional string ssid = 1;
+	optional int32 rssi = 2;
+	optional AntennaType antenna = 3;
+    }
+    repeated periodic_data data = 1;
+    required string device_id = 2;
+    required int32 firmware_version=3;
     optional int32 uptime_in_second = 4;
     optional bool need_key = 5;
-	optional string serial = 6;
+    optional string serial = 6;
     optional string connected_ssid = 7;
     repeated wifi_access_point scan = 8;
 }
