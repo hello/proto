@@ -33,6 +33,9 @@ message batched_periodic_data {
     optional int32 uptime_in_second = 4;
     optional bool need_key = 5;
 	optional string serial = 6;
+    optional string connected_ssid = 7;
+    repeated wifi_access_point scan = 8;
+    optional string ring_time_ack = 9;
 }
 
 

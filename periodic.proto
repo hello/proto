@@ -41,6 +41,9 @@ message batched_periodic_data {
 	required string device_id = 2;
 	required int32 firmware_version=3;
 	optional int32 uptime_in_second = 4;
-	optional string connected_ssid = 5;
-	repeated wifi_access_point scan = 6;
+    optional bool need_key = 5;
+    optional string serial = 6;
+	optional string connected_ssid = 7;
+	repeated wifi_access_point scan = 8;
+    optional string ring_time_ack = 9;
 }
