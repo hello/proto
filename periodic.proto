@@ -11,10 +11,10 @@ message periodic_data {
     optional int32 humidity=4;
     optional int32 dust=5;
     //optional string name=6;
-	//optional bytes mac=7;
-	optional int32 light_variability=8;
-	optional int32 light_tonality=9;
-	//optional int32 firmware_version=10;
+    //optional bytes mac=7;
+    optional int32 light_variability=8;
+    optional int32 light_tonality=9;
+    //optional int32 firmware_version=10;
     // Please do not reuse index 11, it's for the removed pill_data.
     //optional string device_id = 12;
     optional int32 dust_variability=13;
@@ -41,6 +41,8 @@ message batched_periodic_data {
 	required string device_id = 2;
 	required int32 firmware_version=3;
 	optional int32 uptime_in_second = 4;
-	optional string connected_ssid = 5;
-	repeated wifi_access_point scan = 6;
+        //optional bool need_key = 5;
+        //optional string serial = 6;
+	optional string connected_ssid = 7;
+	repeated wifi_access_point scan = 8;
 }
