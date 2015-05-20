@@ -80,6 +80,9 @@ message StateModel {
   optional DiscreteAlphabetModel disturbances = 13;
   optional GammaModel log_sound_count = 14;
   optional DiscreteAlphabetModel natural_light_filter = 15;
+  optional PoissonModel partner_motion_count = 16;
+  optional DiscreteAlphabetModel partner_disturbances = 17;
+
 }
 
 
