@@ -5,11 +5,13 @@ option java_outer_classname = "SleepHmmProtos";
 enum SleepMode {
   SLEEP = 0;
   WAKE = 1;
+  CONDITIONAL_SLEEP = 2; //if there is SLEEP before and after, this state becomes SLEEP
 }
 
 enum BedMode  {
   ON_BED = 0;
   OFF_BED = 1;
+  CONDITIONAL_BED = 2; //if there is ON_BED before and after, this state becomes ON_BED
 }
 
 enum SleepDepth {
@@ -102,6 +104,7 @@ message SleepHmm {
   optional bool enable_interval_search = 14;
   optional double light_pre_multiplier = 15;
   optional double light_floor_lux = 16;
+  optional bool use_wave_as_disturbance = 17;
 }
 
 message SleepHmmModelSet {
