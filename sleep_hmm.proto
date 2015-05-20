@@ -105,6 +105,7 @@ message SleepHmm {
   optional double light_pre_multiplier = 15;
   optional double light_floor_lux = 16;
   optional bool use_wave_as_disturbance = 17;
+  optional double audio_level_above_background_threshold_db = 18;
 }
 
 message SleepHmmModelSet {
