@@ -31,6 +31,7 @@ enum SleepDepth {
    */
 message PoissonModel {
   required double mean = 1;
+  optional double weight = 2;
 }
 
 /*  Alphabet model symbol P(A)  = 0.3, P(B) = 0.7, etc.
@@ -38,6 +39,7 @@ message PoissonModel {
  */
 message DiscreteAlphabetModel {
   repeated double probabilities = 1;
+  optional double weight = 2;
 }
 
 /*  Gamma distribution
@@ -60,6 +62,7 @@ message DiscreteAlphabetModel {
 message GammaModel {
   required double mean = 1;
   required double stddev = 2;
+  optional double weight = 3;
 }
 
 /* Description of each state    */
