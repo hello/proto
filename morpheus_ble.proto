@@ -120,6 +120,7 @@ message MorpheusCommand {
 	optional int32 ble_bond_count = 18;
 	optional string country_code = 19;
 	optional bytes aes_key = 20;
+    optional string top_version = 21;
 }
 
 message batched_pill_data {
