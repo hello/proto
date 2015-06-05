@@ -1,6 +1,6 @@
 //package hello;
 
-option java_package = "com.hello.suripu.api.ble";
+option java_package = "is.hello.sense.bluetooth.devices.transmission.protobuf";
 option java_outer_classname = "SenseCommandProtos";
 
 enum ErrorType {
