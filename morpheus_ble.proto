@@ -108,6 +108,7 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_PUSH_DATA_AFTER_SET_TIMEZONE = 31;
 	    MORPHEUS_COMMAND_SET_COUNTRY_CODE = 32;
 	    MORPHEUS_COMMAND_SET_SERVER_IP = 33;
+	    MORPHEUS_COMMAND_CONNECTION_STATE = 34;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
