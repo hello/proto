@@ -2,3 +2,4 @@ pill_data.device_id              max_size:17
 pill_data.motion_data_entrypted  max_size:20
 MorpheusCommand.country_code     max_size:3
 MorpheusCommand.aes_key          max_size:16
+MorpheusCommand.top_version      max_size:16

@@ -133,6 +133,7 @@ message MorpheusCommand {
 	optional uint32 server_ip = 21;
 	optional uint32 socket_error_code = 22;
 	optional string http_respose_code = 23;
+    optional string top_version = 21;
 }
 
 message batched_pill_data {
