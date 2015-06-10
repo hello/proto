@@ -19,6 +19,7 @@ enum ErrorType {
 	FORCE_DATA_PUSH_FAILED = 12;//error from pushing data after MORPHEUS_COMMAND_PUSH_DATA_AFTER_SET_TIMEZONE
 	PROTOBUF_ENCODE_FAILED = 13;
 	PROTOBUF_DECODE_FAILED = 14;
+	SERVER_CONNECTION_TIMEOUT = 15;
 }
 
 message wifi_endpoint {
@@ -111,7 +112,6 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_SET_COUNTRY_CODE = 32;
 	    MORPHEUS_COMMAND_SET_SERVER_IP = 33;
 	    MORPHEUS_COMMAND_CONNECTION_STATE = 34;
-	    MORPHEUS_COMMAND_DISABLE_WIFI_CONNECTION_UPDATES = 35;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
