@@ -1,5 +1,6 @@
 option java_package = "com.hello.suripu.api.datascience";
 option java_outer_classname = "SleepHmmBayesNetProtos";
+package hello;
 
 /* observation type */
 enum MeasType{
@@ -54,8 +55,6 @@ message ObsModel {
 message BetaCondProb {
   required double alpha = 1; //prior 
   required double beta = 2; //prior
-  optional double num_true = 3; //updated from user feedback
-  optional double num_false = 4;//updated from user feedback
 }
 
 message CondProbs {
