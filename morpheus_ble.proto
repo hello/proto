@@ -19,6 +19,7 @@ enum ErrorType {
 	FORCE_DATA_PUSH_FAILED = 12;//error from pushing data after MORPHEUS_COMMAND_PUSH_DATA_AFTER_SET_TIMEZONE
 	PROTOBUF_ENCODE_FAILED = 13;
 	PROTOBUF_DECODE_FAILED = 14;
+	SERVER_CONNECTION_TIMEOUT = 15;
 }
 
 message wifi_endpoint {
@@ -54,7 +55,17 @@ enum wifi_connection_state {
 	WLAN_CONNECTING = 1;
 	WLAN_CONNECTED = 2;
 	IP_RETRIEVED = 3;
+	DNS_RESOLVED = 4;
+	SOCKET_CONNECTED = 5;
+	REQUEST_SENT = 6;
+	CONNECTED = 7;
+
+	SSL_FAIL = 8;
+	HELLO_KEY_FAIL = 9;
+	DNS_FAILED = 10;
+	CONNECT_FAILED = 11;
 }
+
 message pill_data {
 	required string device_id = 1;
 	optional int32 battery_level = 2;
@@ -99,6 +110,8 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_LED_OPERATION_SUCCESS = 30;
 	    MORPHEUS_COMMAND_PUSH_DATA_AFTER_SET_TIMEZONE = 31;
 	    MORPHEUS_COMMAND_SET_COUNTRY_CODE = 32;
+	    MORPHEUS_COMMAND_SET_SERVER_IP = 33;
+	    MORPHEUS_COMMAND_CONNECTION_STATE = 34;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
@@ -120,6 +133,11 @@ message MorpheusCommand {
 	optional int32 ble_bond_count = 18;
 	optional string country_code = 19;
 	optional bytes aes_key = 20;
+    optional string top_version = 21;
+	optional uint32 server_ip = 22;
+	optional uint32 socket_error_code = 23;
+	optional string http_response_code = 24;
+	optional int32 app_version = 25;
 }
 
 message batched_pill_data {
