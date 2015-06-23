@@ -6,9 +6,9 @@ package hello;
 enum MeasType{
   LOG_LIGHT = 0;
   MOTION_DURATION = 1;
-  LOG_SOUND = 2;
+  PILL_MAGNITUDE_DISTURBANCE = 2;
   NATURAL_LIGHT = 3;
-  PILL_MAGNITUDE_DISTURBANCE = 4;
+  LOG_SOUND = 4;
 } 
 
 /* Observational model types  */
