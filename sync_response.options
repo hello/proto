@@ -4,3 +4,4 @@ SyncResponse.PillSettings.pill_id   max_size:17
 SyncResponse.pill_settings    max_count:2
 SyncResponse.Alarm.ringtone_path    max_size:24
 BatchedPillSettings.pill_settings   max_count:2
+SyncResponse.ring_time_ack   max_size:30

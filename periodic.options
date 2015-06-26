@@ -1,2 +1,3 @@
 batched_periodic_data.connected_ssid   max_size:33
 batched_periodic_data.wifi_access_point.ssid   max_size:33
+batched_periodic_data.ring_time_ack   max_size:30
