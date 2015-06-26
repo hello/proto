@@ -5,11 +5,13 @@ option java_outer_classname = "SleepHmmProtos";
 enum SleepMode {
   SLEEP = 0;
   WAKE = 1;
+  CONDITIONAL_SLEEP = 2; //if there is SLEEP before and after, this state becomes SLEEP
 }
 
 enum BedMode  {
   ON_BED = 0;
   OFF_BED = 1;
+  CONDITIONAL_BED = 2; //if there is ON_BED before and after, this state becomes ON_BED
 }
 
 enum SleepDepth {
@@ -29,6 +31,7 @@ enum SleepDepth {
    */
 message PoissonModel {
   required double mean = 1;
+  optional double weight = 2;
 }
 
 /*  Alphabet model symbol P(A)  = 0.3, P(B) = 0.7, etc.
@@ -36,6 +39,7 @@ message PoissonModel {
  */
 message DiscreteAlphabetModel {
   repeated double probabilities = 1;
+  optional double weight = 2;
 }
 
 /*  Gamma distribution
@@ -58,6 +62,7 @@ message DiscreteAlphabetModel {
 message GammaModel {
   required double mean = 1;
   required double stddev = 2;
+  optional double weight = 3;
 }
 
 /* Description of each state    */
@@ -78,6 +83,9 @@ message StateModel {
   optional DiscreteAlphabetModel disturbances = 13;
   optional GammaModel log_sound_count = 14;
   optional DiscreteAlphabetModel natural_light_filter = 15;
+  optional PoissonModel partner_motion_count = 16;
+  optional DiscreteAlphabetModel partner_disturbances = 17;
+
 }
 
 
@@ -102,6 +110,8 @@ message SleepHmm {
   optional bool enable_interval_search = 14;
   optional double light_pre_multiplier = 15;
   optional double light_floor_lux = 16;
+  optional bool use_wave_as_disturbance = 17;
+  optional double audio_level_above_background_threshold_db = 18;
 }
 
 message SleepHmmModelSet {

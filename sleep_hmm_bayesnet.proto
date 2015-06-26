@@ -1,0 +1,94 @@
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "SleepHmmBayesNetProtos";
+package hello;
+
+/* observation type */
+enum MeasType{
+  LOG_LIGHT = 0;
+  MOTION_DURATION = 1;
+  PILL_MAGNITUDE_DISTURBANCE = 2;
+  NATURAL_LIGHT = 3;
+  LOG_SOUND = 4;
+} 
+
+/* Observational model types  */
+
+message PoissonModel {
+  required double mean = 1;
+}
+
+message DiscreteAlphabetModel {
+  repeated double probabilities = 1;
+}
+
+message GammaModel {
+  required double mean = 1;
+  required double stddev = 2;
+}
+
+message ChiSquareModel {
+  required double mean = 1;
+}
+
+message OneDimensionalGaussianModel {
+  required double mean = 1;
+  required double stddev = 2;
+}
+
+
+/*  Observation model -- could be one of any model type*/
+message ObsModel {
+  //these are all one dimensional models
+  required int32 state_index = 1;
+  required MeasType meas_type = 2;
+
+  optional ChiSquareModel chisquare = 5;
+  optional OneDimensionalGaussianModel gaussian = 6;
+  optional GammaModel gamma = 7;
+  optional PoissonModel poisson = 8;
+  optional DiscreteAlphabetModel alphabet = 9;
+
+  optional double weight = 20;
+  optional int32 num_free_params = 21;
+}
+
+message BetaCondProb {
+  required double alpha = 1; //prior 
+  required double beta = 2; //prior
+}
+
+message CondProbs {
+  required string model_id = 1;
+  required string output_id = 2;
+  repeated BetaCondProb probs = 3;
+}
+
+message HiddenMarkovModel {
+  required string id = 1;
+  optional string description = 2;
+  repeated ObsModel observation_model = 3;
+  repeated double state_transition_matrix = 4;
+  required int32 num_states = 5;
+}
+
+message MeasurementParams {
+  optional int32 num_minutes_in_meas_period = 1;
+  optional bool enable_interval_search = 2;
+  optional double natural_light_filter_start_hour = 3; //in 24 hours format, so 16.0 is 4pm
+  optional double natural_light_filter_stop_hour = 4; //in 24 hours format, so 4.0 is 4am
+  optional double light_pre_multiplier = 5;
+  optional double light_floor_lux = 6;
+  optional bool use_waves_for_disturbances = 7;
+  optional double motion_count_for_disturbances = 8;
+}
+
+message HmmBayesNet {
+  required MeasurementParams measurement_parameters = 1;
+  repeated HiddenMarkovModel independent_hmms = 2;
+  repeated CondProbs conditional_probabilities  = 3;
+}
+
+
+
+
+
