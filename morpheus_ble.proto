@@ -73,6 +73,7 @@ message pill_data {
 	optional bytes motion_data_entrypted = 4;
 	optional int32 firmware_version = 5;
 	required uint64 timestamp = 6;
+	optional int32 rssi = 7;
 }
 
 message MorpheusCommand {
