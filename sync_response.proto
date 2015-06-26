@@ -116,7 +116,9 @@ message SyncResponse {
     repeated PillSettings pill_settings = 20;
     optional bool reset_mcu = 21;
 	optional uint32 upload_log_level = 22;
-    optional string ring_time_ack = 23;
+	optional uint32 pill_batch_size = 23;
+    optional string ring_time_ack = 24;
+    
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
