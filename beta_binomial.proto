@@ -15,5 +15,4 @@ message CondProbs {
 
 message MultipleCondProbs {
   repeated CondProbs cond_probs = 1;
-  required string model_bucket_id = 2; //which s3 bucket did the HMM models come from
 }
