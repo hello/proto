@@ -15,16 +15,5 @@ message CondProbs {
 
 message MultipleCondProbs {
   repeated CondProbs cond_probs = 1;
-}
-
-message ModelPath {
-  required string model_id = 1;
-  required string output_id = 2;
-  repeated int32 path = 3;
-}
-
-message ModelResult {
-  repeated ModelPath paths = 1;
-  required int64 start_time_utc = 2;
-  optional int32 meas_period_minutes = 3;
+  required string model_bucket_id = 2; //which s3 bucket did the HMM models come from
 }
