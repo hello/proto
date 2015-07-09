@@ -1,0 +1,18 @@
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "BetaBinomialProtos";
+package hello;
+
+message BetaCondProb {
+  required double alpha = 1; //prior
+  required double beta = 2; //prior
+}
+
+message CondProbs {
+  required string model_id = 1;
+  required string output_id = 2;
+  repeated BetaCondProb probs = 3;
+}
+
+message MultipleCondProbs {
+  repeated CondProbs cond_probs = 1;
+}

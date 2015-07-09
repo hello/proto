@@ -2,6 +2,8 @@ option java_package = "com.hello.suripu.api.datascience";
 option java_outer_classname = "SleepHmmBayesNetProtos";
 package hello;
 
+import "beta_binomial.proto";
+
 /* observation type */
 enum MeasType{
   LOG_LIGHT = 0;
@@ -9,6 +11,10 @@ enum MeasType{
   PILL_MAGNITUDE_DISTURBANCE = 2;
   NATURAL_LIGHT = 3;
   LOG_SOUND = 4;
+  PARTNER_MOTION_DURATION = 5;
+  WAVE_DISTURBANCE = 6;
+  LIGHT_INCREASE_DISTURBANCE = 7;
+  SOUND_INCREASE_DISTURBANCE = 8;
 } 
 
 /* Observational model types  */
@@ -50,17 +56,6 @@ message ObsModel {
 
   optional double weight = 20;
   optional int32 num_free_params = 21;
-}
-
-message BetaCondProb {
-  required double alpha = 1; //prior 
-  required double beta = 2; //prior
-}
-
-message CondProbs {
-  required string model_id = 1;
-  required string output_id = 2;
-  repeated BetaCondProb probs = 3;
 }
 
 message HiddenMarkovModel {
