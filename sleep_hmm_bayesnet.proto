@@ -46,7 +46,7 @@ message OneDimensionalGaussianModel {
 message ObsModel {
   //these are all one dimensional models
   required int32 state_index = 1;
-  required MeasType meas_type = 2;
+  repeated MeasType meas_type = 2;
 
   optional ChiSquareModel chisquare = 5;
   optional OneDimensionalGaussianModel gaussian = 6;
