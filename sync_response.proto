@@ -118,6 +118,7 @@ message SyncResponse {
 	optional uint32 upload_log_level = 22;
 	optional uint32 pill_batch_size = 23;
     optional string ring_time_ack = 24;
+    optional RoomConditions room_conditions_lights_off = 25;
     
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
