@@ -1,0 +1,13 @@
+option java_package = "com.hello.suripu.api.tasks";
+option java_outer_classname = "TaskProtos";
+
+message WorkerTask {
+    enum TaskType {
+        UNKNOWN = 0;
+        PILL_CLASSIFICATION = 1;
+    }
+
+    optional TaskType task_type = 1;
+    repeated string pill_ids = 2;
+    repeated string sense_ids = 3;
+}
