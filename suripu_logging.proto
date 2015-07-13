@@ -12,6 +12,8 @@ message LogMessage {
     optional bool production = 4 [default = false];
     optional int32 level = 5;
     optional string device_id = 6;
+    optional string middle_fw_version = 7;
+    optional string top_fw_version = 8;
 }
 
 
