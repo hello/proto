@@ -108,7 +108,7 @@ message TimelineLog {
 
     optional int64 account_id = 1;
     optional int64 timestamp_when_log_generated = 2;
-    optional string night_of_timeline = 3;
+    optional int64 night_of_timeline = 3;
     optional AlgType intended_algorithm = 4;
     optional AlgType used_algorithm = 5;
     repeated ErrorType errors = 6;
