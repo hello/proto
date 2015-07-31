@@ -112,5 +112,6 @@ message TimelineLog {
     optional AlgType intended_algorithm = 4;
     optional AlgType used_algorithm = 5;
     repeated ErrorType errors = 6;
-
+    optional int64 uuid_upper = 7; //UUID to match this against server logs
+    optional int64 uuid_lower = 8; //UUID to """"
 }
