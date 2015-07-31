@@ -25,6 +25,7 @@ message BatchLogMessage {
         WORKERS_LOG = 2;
         STRUCTURED_SENSE_LOG = 3;
         ONBOARDING_LOG = 4;
+        TIMELINE_LOG = 5;
     }
 
     repeated LogMessage messages = 1;
@@ -32,6 +33,7 @@ message BatchLogMessage {
     optional LogType log_type = 3;
     optional int64 received_at = 4;
     repeated RegistrationLog registration_log = 5;
+    repeated TimelineLog timeline_log = 6;
 }
 
 message HttpRequest {
@@ -84,4 +86,31 @@ message ProvisionRequest {
     optional string serial_number = 2;
     optional int64 ts = 3;
     optional string ip_address = 4;
+}
+
+message TimelineLog {
+    enum AlgType {
+        NONE = 0; 
+        WUPANG = 1;
+        HMM = 2;
+        VOTING = 3;
+        LAYERED_HMM = 4;
+    }
+
+    enum ErrorType {
+        INTENDED_ALGORITHM_FAILURE = 0;
+        TIMESPAN_TOO_SHORT = 1;
+        NOT_ENOUGH_DATA = 2;
+        NO_DATA = 3;
+        LOW_AMPLITUDE_DATA = 4;
+        PARTNER_FILTER_REJECTED_MY_DATA = 5;
+    }
+
+    optional int64 account_id = 1;
+    optional int64 timestamp_when_log_generated = 2;
+    optional string night_of_timeline = 3;
+    optional AlgType intended_algorithm = 4;
+    optional AlgType used_algorithm = 5;
+    repeated ErrorType errors = 6;
+
 }
