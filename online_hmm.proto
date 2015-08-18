@@ -19,12 +19,14 @@ message AlphabetHmmPrior {
     repeated double log_denominator = 6;
 }
 
+message AlphabetHmmScratchPad {
+    optional int64 last_update_time_utc = 1;
+    optional string model_id = 2;
+    optional int64 date_created = 3;
+}
+
 message AlphabetHmmUserModel {
-    optional int64 account_id = 1;
-    optional AlphabetHmmPrior scratchpad = 2;
-    optional int64 scratchpad_last_update_time_utc = 3;
-    optional string scratchpad_model_id = 4;
-    repeated AlphabetHmmPrior models = 5;
+    repeated AlphabetHmmPrior models = 2;
 }
 
 
