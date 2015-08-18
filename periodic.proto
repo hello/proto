@@ -44,6 +44,7 @@ message batched_periodic_data {
     //optional bool need_key = 5;
     //optional string serial = 6;
 	optional string connected_ssid = 7;
-	repeated wifi_access_point scan = 8;
-    optional string ring_time_ack = 9;
+    //repeated wifi_access_point scan = 8; this one was used in a buggy fw, do not use again
+	optional string ring_time_ack = 9;
+    repeated wifi_access_point scan = 10;
 }
