@@ -1,0 +1,31 @@
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "OnlineHmmProtos";
+package hello;
+
+message RealMatrix {
+    required int32 num_rows = 1;
+    required int32 num_cols = 2;
+    repeated double data = 3;
+    optional string id = 4;
+}
+
+
+message AlphabetHmmPrior {
+    optional string id = 1;
+    optional int64 date_created_utc = 2;
+    optional int64 date_updated_utc = 3;
+    optional RealMatrix log_state_transition_numerator = 4;
+    repeated RealMatrix log_observation_model_numerator = 5;
+    repeated double log_denominator = 6;
+}
+
+message AlphabetHmmUserModel {
+    optional int64 account_id = 1;
+    optional AlphabetHmmPrior scratchpad = 2;
+    optional int64 scratchpad_last_update_time_utc = 3;
+    optional string scratchpad_model_id = 4;
+    repeated AlphabetHmmPrior models = 5;
+}
+
+
+
