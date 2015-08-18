@@ -2,8 +2,6 @@ option java_package = "com.hello.suripu.api.datascience";
 option java_outer_classname = "SleepHmmBayesNetProtos";
 package hello;
 
-import "beta_binomial.proto";
-
 /* observation type */
 enum MeasType{
   LOG_LIGHT = 0;
@@ -83,7 +81,7 @@ message MeasurementParams {
 message HmmBayesNet {
   required MeasurementParams measurement_parameters = 1;
   repeated HiddenMarkovModel independent_hmms = 2;
-  repeated CondProbs conditional_probabilities  = 3;
+  //repeated CondProbs conditional_probabilities  = 3;
 }
 
 
