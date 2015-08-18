@@ -9,20 +9,25 @@ message RealMatrix {
     optional string id = 4;
 }
 
+enum OutputId {
+  SLEEP = 0;
+  BED = 1;
+}
 
 message AlphabetHmmPrior {
     optional string id = 1;
-    optional int64 date_created_utc = 2;
-    optional int64 date_updated_utc = 3;
-    optional RealMatrix log_state_transition_numerator = 4;
-    repeated RealMatrix log_observation_model_numerator = 5;
-    repeated double log_denominator = 6;
+    optional OutputId output_id = 2;
+    optional int64 date_created_utc = 3;
+    optional int64 date_updated_utc = 4;
+    optional RealMatrix log_state_transition_numerator = 5;
+    repeated RealMatrix log_observation_model_numerator = 6;
+    repeated double log_denominator = 7;
 }
 
 message AlphabetHmmScratchPad {
     optional int64 last_update_time_utc = 1;
-    optional string model_id = 2;
-    optional int64 date_created = 3;
+    optional int64 date_created = 2;
+    repeated AlphabetHmmPrior model_deltas = 3;
 }
 
 message AlphabetHmmUserModel {
