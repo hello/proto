@@ -21,7 +21,8 @@ message AlphabetHmmPrior {
     optional int64 date_updated_utc = 4;
     optional RealMatrix log_state_transition_numerator = 5;
     repeated RealMatrix log_observation_model_numerator = 6;
-    repeated double log_denominator = 7;
+    repeated string log_observation_model_ids = 7;
+    repeated double log_denominator = 8;
 }
 
 message AlphabetHmmScratchPad {
