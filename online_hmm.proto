@@ -25,6 +25,7 @@ message AlphabetHmmPrior {
     repeated double log_denominator = 8;
     repeated double pi = 9;
     repeated int32 end_states = 10;
+    repeated int32 minimum_state_durations = 11;
 }
 
 message AlphabetHmmScratchPad {
