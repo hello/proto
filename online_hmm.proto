@@ -23,6 +23,8 @@ message AlphabetHmmPrior {
     repeated RealMatrix log_observation_model_numerator = 6;
     repeated string log_observation_model_ids = 7;
     repeated double log_denominator = 8;
+    repeated double pi = 9;
+    repeated int32 end_states = 10;
 }
 
 message AlphabetHmmScratchPad {
