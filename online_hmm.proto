@@ -10,8 +10,13 @@ message RealMatrix {
 }
 
 enum OutputId {
-  SLEEP = 0;
-  BED = 1;
+    SLEEP = 0;
+    BED = 1;
+}
+
+message Transition {
+    required int32 from = 1;
+    required int32 to = 2;
 }
 
 message AlphabetHmmPrior {
@@ -35,7 +40,8 @@ message AlphabetHmmScratchPad {
 }
 
 message AlphabetHmmUserModel {
-    repeated AlphabetHmmPrior models = 2;
+    repeated AlphabetHmmPrior models = 1;
+    repeated Transition forbiddeden_motion_transitions = 2;
 }
 
 
