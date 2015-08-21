@@ -37,9 +37,8 @@ message AlphabetHmmPrior {
 }
 
 message AlphabetHmmScratchPad {
-    optional int64 last_update_time_utc = 1;
-    optional int64 date_created = 2;
-    repeated AlphabetHmmPrior model_deltas = 3;
+    optional int64 last_date_updated_utc = 1;
+    repeated AlphabetHmmPrior model_deltas = 2;
 }
 
 message AlphabetHmmUserModel {
