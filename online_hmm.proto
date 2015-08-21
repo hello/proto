@@ -9,6 +9,9 @@ message RealMatrix {
     optional string id = 4;
 }
 
+//this maps to a interpretation layer factory in the suripu
+//if you are going to create a new user model type (i.e. not SLEEP or BED)
+//you must update this factory in suripu
 enum OutputId {
     SLEEP = 0;
     BED = 1;
