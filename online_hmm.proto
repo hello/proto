@@ -20,6 +20,7 @@ enum OutputId {
 message Transition {
     required int32 from = 1;
     required int32 to = 2;
+    optional String output_id = 3;
 }
 
 message AlphabetHmmPrior {
