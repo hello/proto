@@ -20,7 +20,12 @@ enum OutputId {
 message Transition {
     required int32 from = 1;
     required int32 to = 2;
-    optional OutputId output_id = 3;
+}
+
+message MotionModelRestriction {
+    optional string motion_model_id = 1;
+    repeated Transition forbiddeden_motion_transitions = 2;
+    repeated int32 non_motion_states = 3;
 }
 
 message AlphabetHmmPrior {
@@ -35,6 +40,7 @@ message AlphabetHmmPrior {
     repeated double pi = 9;
     repeated int32 end_states = 10;
     repeated int32 minimum_state_durations = 11;
+    optional MotionModelRestriction motion_model_restriction = 12; //restricts transitions to only certain states and times
 }
 
 message AlphabetHmmScratchPad {
@@ -44,7 +50,6 @@ message AlphabetHmmScratchPad {
 
 message AlphabetHmmUserModel {
     repeated AlphabetHmmPrior models = 1;
-    repeated Transition forbiddeden_motion_transitions = 2;
 }
 
 
