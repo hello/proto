@@ -44,9 +44,10 @@ message batched_periodic_data {
 	// optional string serial = 6; // this is no longer used on the FW
     
     // Commenting the following out until we figure why it fails to parse
-    // optional string connected_ssid = 7;
+    optional string connected_ssid = 7;
     // repeated wifi_access_point scan = 8;
     // optional string ring_time_ack = 9;
+    repeated wifi_access_point scan = 10;
 }
 
 
