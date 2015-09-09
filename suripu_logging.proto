@@ -105,6 +105,7 @@ message TimelineLog {
         LOW_AMPLITUDE_DATA = 4;
         PARTNER_FILTER_REJECTED_MY_DATA = 5;
         MISSING_KEY_EVENTS = 6;
+        INVALID_SLEEP_SCORE = 7;
     }
 
     optional int64 account_id = 1;
