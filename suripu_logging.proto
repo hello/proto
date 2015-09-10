@@ -111,6 +111,7 @@ message TimelineLog {
         MISSING_KEY_EVENTS = 7;
         INVALID_SLEEP_SCORE = 8;
         NOT_ENOUGH_SLEEP_TIME = 9;
+        UNEXEPECTED = 10; 
     }
 
     enum EventType {
@@ -137,7 +138,7 @@ message TimelineLog {
     optional float model_score = 8;
     optional string model_name = 9;
     repeated Prediction predictions = 10;
-
+    optional string message = 11;
 }
 
 
