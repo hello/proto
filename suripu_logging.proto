@@ -130,7 +130,7 @@ message TimelineLog {
     optional int64 account_id = 1;
     optional int64 timestamp_when_log_generated = 2;
     optional int64 night_of_timeline = 3;
-    optional AlgType intended_algorithm = 4;
+    optional AlgType algorithm = 4;
     optional ErrorType error = 5;
     optional int64 log_uuid_upper = 6; //UUID to match this against server logs
     optional int64 log_uuid_lower = 7; //UUID to """"
