@@ -88,32 +88,56 @@ message ProvisionRequest {
     optional string ip_address = 4;
 }
 
+//one log message to rule the algs
+//think of it as polymorphism--a lot of the optional fields will not be there 
 message TimelineLog {
     enum AlgType {
-        NONE = 0; 
+        NO_ALGORITHM = 0; 
         WUPANG = 1;
         HMM = 2;
         VOTING = 3;
-        LAYERED_HMM = 4;
+        ONLINE_HMM = 4;
     }
 
+    //mutually exclusive list of errors
     enum ErrorType {
-        INTENDED_ALGORITHM_FAILURE = 0;
-        TIMESPAN_TOO_SHORT = 1;
-        NOT_ENOUGH_DATA = 2;
-        NO_DATA = 3;
-        LOW_AMPLITUDE_DATA = 4;
-        PARTNER_FILTER_REJECTED_MY_DATA = 5;
-        MISSING_KEY_EVENTS = 6;
-        INVALID_SLEEP_SCORE = 7;
+        NO_ERROR = 0;
+        INTENDED_ALGORITHM_FAILURE = 1;
+        TIMESPAN_TOO_SHORT = 2;
+        NOT_ENOUGH_DATA = 3;
+        NO_DATA = 4;
+        LOW_AMPLITUDE_DATA = 5;
+        PARTNER_FILTER_REJECTED_MY_DATA = 6;
+        MISSING_KEY_EVENTS = 7;
+        INVALID_SLEEP_SCORE = 8;
+        NOT_ENOUGH_SLEEP_TIME = 9;
+    }
+
+    enum EventType {
+        NO_EVENT = 0;
+        IN_BED = 1;
+        SLEEP = 2;
+        WAKE = 3;
+        OUT_OF_BED = 4;
+    }
+
+    message Prediction {
+        optional EventType event_type = 1;
+        optional int64 event_time_utc_millis = 2;
+        optional int32 timezone_offset_millis = 3;
     }
 
     optional int64 account_id = 1;
     optional int64 timestamp_when_log_generated = 2;
     optional int64 night_of_timeline = 3;
     optional AlgType intended_algorithm = 4;
-    optional AlgType used_algorithm = 5;
-    repeated ErrorType errors = 6;
-    optional int64 log_uuid_upper = 7; //UUID to match this against server logs
-    optional int64 log_uuid_lower = 8; //UUID to """"
+    optional ErrorType error = 5;
+    optional int64 log_uuid_upper = 6; //UUID to match this against server logs
+    optional int64 log_uuid_lower = 7; //UUID to """"
+    optional float model_score = 8;
+    optional string model_name = 9;
+    repeated Prediction predictions = 10;
+
 }
+
+
