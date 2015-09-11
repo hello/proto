@@ -121,6 +121,8 @@ message TimelineLog {
         INVALID_SLEEP_SCORE = 8;
         NOT_ENOUGH_SLEEP_TIME = 9;
         UNEXEPECTED = 10; 
+        DATA_GAP_TOO_LARGE = 11;
+        EVENTS_OUT_OF_ORDER = 12;
     }
 
     message Prediction {
