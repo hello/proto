@@ -34,8 +34,6 @@ message BatchLogMessage {
     optional int64 received_at = 4;
     repeated RegistrationLog registration_log = 5;
     repeated TimelineLog timeline_log = 6;
-    repeated FeedbackLog feedback_log = 7;
-    optional PartnerFilterLog partner_filter_log = 8;
 }
 
 message HttpRequest {
@@ -91,35 +89,6 @@ message ProvisionRequest {
 }
 
 
-enum SleepEventType {
-    NO_EVENT = 0;
-    IN_BED = 1;
-    SLEEP = 2;
-    WAKE = 3;
-    OUT_OF_BED = 4;
-}
-
-message FeedbackLog {
-    optional SleepEventType event_type = 1;
-    optional int64 predicted_time_utc_millis = 2;
-    optional int64 corrected_time_utc_millis = 3;
-    optional int32 timezone_offset_millis = 4;
-}
-
-message PartnerFilterLog {
-    enum PartnerFilterType {
-        NO_PARTNER_FILTER = 0;
-        HMM_PARTNER_FILTER_5_MIN_INTERVAL = 1;
-    }
-
-    optional PartnerFilterType partner_filter_type = 1;
-    optional int32 num_tracker_motion_data_dropped = 2;
-    optional int32 num_tracker_motion_data_available = 3;
-    optional int64 allowed_start_time_utc_millis = 4;
-    optional int64 allowed_end_time_utc_millis = 5;
-    optional int32 timezone_offset_millis = 6;
-}
-
 //one log message to rule the algs
 //think of it as polymorphism--a lot of the optional fields will not be there 
 message TimelineLog {
@@ -129,6 +98,14 @@ message TimelineLog {
         HMM = 2;
         VOTING = 3;
         ONLINE_HMM = 4;
+    }
+
+    enum SleepEventType {
+        NO_EVENT = 0;
+        IN_BED = 1;
+        SLEEP = 2;
+        WAKE = 3;
+        OUT_OF_BED = 4;
     }
 
     //mutually exclusive list of errors
