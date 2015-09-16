@@ -142,6 +142,7 @@ message TimelineLog {
     optional string model_name = 9;
     repeated Prediction predictions = 10;
     optional string message = 11;
+    optional string night_of_timeline_string = 12;
 }
 
 
