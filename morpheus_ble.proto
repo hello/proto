@@ -72,7 +72,7 @@ message pill_data {
 	optional int32 uptime = 3;
 	optional bytes motion_data_entrypted = 4;
 	optional int32 firmware_version = 5;
-	required uint64 timestamp = 6;
+	required uint64 timestamp = 6; // In seconds
 	optional int32 rssi = 7;
 }
 
