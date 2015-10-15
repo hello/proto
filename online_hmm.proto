@@ -1,0 +1,56 @@
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "OnlineHmmProtos";
+package hello;
+
+message RealMatrix {
+    required int32 num_rows = 1;
+    required int32 num_cols = 2;
+    repeated double data = 3;
+    optional string id = 4;
+}
+
+//this maps to a interpretation layer factory in the suripu
+//if you are going to create a new user model type (i.e. not SLEEP or BED)
+//you must update this factory in suripu
+enum OutputId {
+    SLEEP = 0;
+    BED = 1;
+}
+
+message Transition {
+    required int32 from = 1;
+    required int32 to = 2;
+}
+
+message MotionModelRestriction {
+    optional string motion_model_id = 1;
+    repeated Transition forbiddeden_motion_transitions = 2;
+    repeated int32 non_motion_states = 3;
+}
+
+message AlphabetHmmPrior {
+    optional string id = 1;
+    optional OutputId output_id = 2;
+    optional int64 date_created_utc = 3;
+    optional int64 date_updated_utc = 4;
+    optional RealMatrix log_state_transition_numerator = 5;
+    repeated RealMatrix log_observation_model_numerator = 6;
+    repeated string log_observation_model_ids = 7;
+    repeated double log_denominator = 8;
+    repeated double pi = 9;
+    repeated int32 end_states = 10;
+    repeated int32 minimum_state_durations = 11;
+    optional MotionModelRestriction motion_model_restriction = 12; //restricts transitions to only certain states and times
+}
+
+message AlphabetHmmScratchPad {
+    optional int64 last_date_updated_utc = 1;
+    repeated AlphabetHmmPrior model_deltas = 2;
+}
+
+message AlphabetHmmUserModel {
+    repeated AlphabetHmmPrior models = 1;
+}
+
+
+
