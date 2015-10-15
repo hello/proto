@@ -63,6 +63,8 @@ message HiddenMarkovModel {
   repeated ObsModel observation_model = 3;
   repeated double state_transition_matrix = 4;
   required int32 num_states = 5;
+  repeated double init_state_probs = 6;
+  repeated int32 allowed_end_states = 7;
 }
 
 message MeasurementParams {
