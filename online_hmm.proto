@@ -48,8 +48,15 @@ message AlphabetHmmScratchPad {
     repeated AlphabetHmmPrior model_deltas = 2;
 }
 
+message VotingInfo {
+    optional double num_votes = 1;
+    optional string model_id = 2;
+    optional string output_id = 3;
+}
+
 message AlphabetHmmUserModel {
     repeated AlphabetHmmPrior models = 1;
+    repeated VotingInfo vote_info = 2;
 }
 
 
