@@ -49,9 +49,9 @@ message AlphabetHmmScratchPad {
 }
 
 message VotingInfo {
-    optional double num_votes = 1;
-    optional string model_id = 2;
-    optional string output_id = 3;
+    optional string model_id = 1;
+    optional string output_id = 2;
+    optional double probability_of_model = 3;
 }
 
 message AlphabetHmmUserModel {
