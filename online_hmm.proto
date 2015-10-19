@@ -46,6 +46,7 @@ message AlphabetHmmPrior {
 message AlphabetHmmScratchPad {
     optional int64 last_date_updated_utc = 1;
     repeated AlphabetHmmPrior model_deltas = 2;
+    repeated VotingInfo vote_info = 3;
 }
 
 message VotingInfo {
@@ -56,7 +57,7 @@ message VotingInfo {
 
 message AlphabetHmmUserModel {
     repeated AlphabetHmmPrior models = 1;
-    repeated VotingInfo vote_info = 2;
+    repeated VotingInfo vote_info = 2; //purposely decoupled from the models
 }
 
 
