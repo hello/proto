@@ -143,6 +143,7 @@ message TimelineLog {
     repeated Prediction predictions = 10;
     optional string message = 11;
     optional string night_of = 12;
+    optional int64 test_group = 13;
 }
 
 
