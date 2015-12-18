@@ -113,6 +113,7 @@ message MorpheusCommand {
 	    MORPHEUS_COMMAND_SET_COUNTRY_CODE = 32;
 	    MORPHEUS_COMMAND_SET_SERVER_IP = 33;
 	    MORPHEUS_COMMAND_CONNECTION_STATE = 34;
+	    MORPHEUS_COMMAND_PILL_PROX_DATA = 35;
 	}
 	required int32 version = 1;
 	required CommandType type = 2;
