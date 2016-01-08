@@ -145,4 +145,5 @@ message MorpheusCommand {
 message batched_pill_data {
 	repeated pill_data pills = 1;
 	required string device_id = 2;
+	repeated pill_prox_data pills = 3;
 }
