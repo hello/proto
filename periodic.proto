@@ -47,4 +47,5 @@ message batched_periodic_data {
 	// repeated wifi_access_point scan = 8;
     optional string ring_time_ack = 9;
     repeated wifi_access_point scan = 10;
+    optional int32 messages_in_queue = 11;
 }
