@@ -1,0 +1,35 @@
+option java_package = "com.hello.messeji.api";
+
+import "sleep_sounds.proto";
+
+
+message ReadReceipt {
+    repeated int64 messageIds = 1;
+}
+
+
+message Message {
+
+    enum Type { SLEEP_SOUNDS = 1; }
+
+    // Unique ID associated with the sender, in order to disambiguate between multiple senders
+    // each generating their own idea of an “order” (see below)
+    optional string senderId = 1;
+
+    // The order as indicated by the sender. Usually this will be a timestamp.
+    // The greater the order, the more recent the message.
+    required int64 order = 2;
+
+    // Server-generated unique messageId for this message.
+    optional int64 messageId = 3;
+
+    // What kind of message this is.
+    required Type type = 4;
+
+    optional SleepSoundsCommand sleepSoundsCommand = 5;
+}
+
+
+message MultiMessage {
+    repeated Message messages = 1;
+}
