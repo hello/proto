@@ -4,7 +4,13 @@ import "sleep_sounds.proto";
 
 
 message ReadReceipt {
-    repeated int64 messageIds = 1;
+    repeated int64 message_ids = 1;
+}
+
+
+message ReceiveMessageRequest {
+    required string sense_id = 1;
+    optional ReadReceipt read_receipt = 2;
 }
 
 
@@ -14,19 +20,19 @@ message Message {
 
     // Unique ID associated with the sender, in order to disambiguate between multiple senders
     // each generating their own idea of an “order” (see below)
-    optional string senderId = 1;
+    optional string sender_id = 1;
 
     // The order as indicated by the sender. Usually this will be a timestamp.
     // The greater the order, the more recent the message.
     required int64 order = 2;
 
     // Server-generated unique messageId for this message.
-    optional int64 messageId = 3;
+    optional int64 message_id = 3;
 
     // What kind of message this is.
     required Type type = 4;
 
-    optional SleepSoundsCommand sleepSoundsCommand = 5;
+    optional SleepSoundsCommand sleep_sounds_command = 5;
 }
 
 
