@@ -4,7 +4,7 @@ import "sleep_sounds.proto";
 
 
 message ReadReceipt {
-    repeated int64 message_ids = 1;
+    repeated int64 message_id = 1;
 }
 
 
@@ -16,7 +16,7 @@ message ReceiveMessageRequest {
 
 message Message {
 
-    enum Type { SLEEP_SOUNDS = 1; }
+    enum Type { SLEEP_SOUNDS = 0; }
 
     // Unique ID associated with the sender, in order to disambiguate between multiple senders
     // each generating their own idea of an “order” (see below)
@@ -37,5 +37,5 @@ message Message {
 
 
 message MultiMessage {
-    repeated Message messages = 1;
+    repeated Message message = 1;
 }
