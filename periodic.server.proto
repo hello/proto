@@ -62,6 +62,6 @@ message BatchPeriodicDataWorker {
     optional int64 received_at = 3;
     optional int32 uptime_in_second = 4;
     repeated AccountMetadata timezones = 5;
-    optional int32 firmware_middle_version = 6;
-    optional int32 firmware_top_version = 7;
+    optional string firmware_middle_version = 6;
+    optional string firmware_top_version = 7;
 }
