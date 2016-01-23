@@ -3,14 +3,9 @@ option java_package = "com.hello.messeji.api";
 import "sleep_sounds.proto";
 
 
-message ReadReceipt {
-    repeated int64 message_id = 1;
-}
-
-
 message ReceiveMessageRequest {
     required string sense_id = 1;
-    optional ReadReceipt read_receipt = 2;
+    repeated int64 message_read_id = 2;
 }
 
 
