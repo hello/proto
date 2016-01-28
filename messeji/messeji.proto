@@ -34,3 +34,32 @@ message Message {
 message BatchMessage {
     repeated Message message = 1;
 }
+
+
+message MessageStatus {
+    enum State {
+
+        /*
+        The initial state of a message when it is first created, meaning it is still in flight but potentially not yet sent.
+        This is a non-terminal state.
+        */
+        PENDING = 0;
+
+        /*
+        Message has attempted to be sent to a recipient, but it has not yet been acknowledged as being received.
+        There is no guarantee that the message will ever be received.
+        If a message is idempotent, the sender may want to attempt to re-send, i.e. to ensure that the white noise
+        turns off. This state may be either non-terminal or terminal.
+        */
+        SENT = 1;
+
+        // The message has been received by the intended recipient and acknowledged. This is a terminal state.
+        RECEIVED = 2;
+
+        // The message age exceeded its timeout and will not be delivered. Terminal state.
+        EXPIRED = 3;
+    }
+
+    required int64 message_id = 1;
+    required State state = 2;
+}
