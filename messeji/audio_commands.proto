@@ -1,0 +1,11 @@
+option java_package = "com.hello.messeji.api";
+
+message StopAudio {
+    required int32 duration = 1; // Fade-out duration in seconds
+}
+
+message PlayAudio {
+    required string file_path = 1; // “/proc/noise"
+    required int32 volume = 2; // As a percent [0, 100]
+    required int32 duration = 3; // Seconds
+}
