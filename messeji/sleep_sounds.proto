@@ -1,3 +1,0 @@
-option java_package = "com.hello.messeji.api";
-
-message SleepSoundsCommand {}

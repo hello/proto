@@ -2,3 +2,5 @@
 *.c
 *.h
 *.py
+*.idea
+*.iml

@@ -1,6 +1,6 @@
 option java_package = "com.hello.messeji.api";
 
-import "sleep_sounds.proto";
+import "audio_commands.proto";
 
 
 message ReceiveMessageRequest {
@@ -11,7 +11,7 @@ message ReceiveMessageRequest {
 
 message Message {
 
-    enum Type { SLEEP_SOUNDS = 0; }
+    enum Type { PLAY_AUDIO = 0; STOP_AUDIO = 1; }
 
     // Unique ID associated with the sender, in order to disambiguate between multiple senders
     // each generating their own idea of an “order” (see below)
@@ -27,7 +27,9 @@ message Message {
     // What kind of message this is.
     required Type type = 4;
 
-    optional SleepSoundsCommand sleep_sounds_command = 5;
+    optional PlayAudio play_audio = 5;
+
+    optional StopAudio stop_audio = 6;
 }
 
 
