@@ -1,0 +1,12 @@
+option java_package = "com.hello.suripu.api.input";
+
+message AudioState {
+    required bool playing_audio = 1;
+    optional uint32 duration_seconds = 2; // Play for `duration` seconds. If not present, play audio indefinitely.
+    optional string file_path = 3;        // Required if playing_audio is true.
+}
+
+message SenseState {
+    required string sense_id = 1;
+    optional AudioState audio_state = 2;
+}
