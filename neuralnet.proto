@@ -1,6 +1,6 @@
 //package hello;
 
-option java_package = "com.hello.suripu.api.neuralnet";
+option java_package = "com.hello.suripu.api.datascience";
 option java_outer_classname = "NeuralNetProtos";
 
 
