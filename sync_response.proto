@@ -5,20 +5,20 @@ option java_outer_classname = "OutputProtos";
 
 import "audio_control.proto";
 
-message SyncResponse {
+message FileDownload {
+    optional string host =1;
+    optional string url =2;
+    optional bool copy_to_serial_flash =4;
+    optional bool reset_network_processor =5;
+    optional bool reset_application_processor =6;
+    optional string serial_flash_filename =7;
+    optional string serial_flash_path =8;
+    optional string sd_card_filename =3;
+    optional string sd_card_path =9;
+    optional bytes sha1 = 10;
+}
 
-	message FileDownload {
-		optional string host =1;
-		optional string url =2;
-		optional bool copy_to_serial_flash =4;
-		optional bool reset_network_processor =5;
-		optional bool reset_application_processor =6;
-		optional string serial_flash_filename =7;
-		optional string serial_flash_path =8;
-		optional string sd_card_filename =3;
-		optional string sd_card_path =9;
-		optional bytes sha1 = 10;
-	}
+message SyncResponse {
 
     message Alarm {
         optional uint32 start_time = 1;  // obselete,  use ring_offset_from_now

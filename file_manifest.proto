@@ -1,0 +1,45 @@
+
+import "sync_response.proto";
+
+message FileManifest {
+
+	enum FileStatusType {
+		DOWNLOAD_COMPLETED = 0;
+		DOWNLOAD_PENDING = 1;
+	}
+
+	message File {
+		optional FileDownload download_info = 1;
+		optional bool delete_file = 2;				// set by server if has_download_info = true
+	}
+
+	message SDCard {
+
+		enum MemoryHealthType {
+			NO_ERROR = 0;
+			READ_ERROR = 1;	
+			WRITE_ERROR = 2;
+		}
+
+		optional MemoryHealthType sd_card_health = 1;
+		optional int32 err_code = 2;
+		optional uint32 total_memory = 3;
+		optional uint32 free_memory = 4;
+	}
+
+	message LinkHealth {
+		optional uint32 send_errors = 1;
+		optional uint32 recv_errors = 2;
+	}
+
+	repeated File file_info = 1;
+	optional bool has_download_info =2;
+	optional FileStatusType file_status = 3; // set if there are items in the download queue which are pending
+	optional SDCard memory_info = 4;
+	optional uint32 device_uptime = 5;
+	optional int32 query_delay = 6; 		// delay between requests in seconds, set by server
+	optional int32 firmware_version = 7;
+	optional int32 unix_time = 8;			// time at which message was created
+	optional LinkHealth link_health = 9;
+
+}
