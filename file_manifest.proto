@@ -9,8 +9,9 @@ message FileManifest {
 	}
 
 	message File {
-		optional FileDownload download_info = 1;
+		required FileDownload download_info = 1;
 		optional bool delete_file = 2;				// set by server if has_download_info = true
+		optional bool has_download_info =3;			// Set by server if file needs to be download, updated, or deleted.
 	}
 
 	message SDCard {
@@ -33,13 +34,12 @@ message FileManifest {
 	}
 
 	repeated File file_info = 1;
-	optional bool has_download_info =2;
-	optional FileStatusType file_status = 3; // set if there are items in the download queue which are pending
-	optional SDCard memory_info = 4;
-	optional uint32 device_uptime = 5;
-	optional int32 query_delay = 6; 		// delay between requests in seconds, set by server
-	optional int32 firmware_version = 7;
-	optional int32 unix_time = 8;			// time at which message was created
-	optional LinkHealth link_health = 9;
+	optional FileStatusType file_status = 2; // set if there are items in the download queue which are pending
+	optional SDCard memory_info = 3;
+	optional uint32 device_uptime = 4;
+	optional int32 query_delay = 5; 		// delay between requests in seconds, set by server
+	optional int32 firmware_version = 6;
+	optional int32 unix_time = 7;			// time at which message was created
+	optional LinkHealth link_health = 8;
 
 }
