@@ -1,7 +1,18 @@
 
-import "sync_response.proto";
-
 message FileManifest {
+
+	message FileDownload {
+	    optional string host =1;
+	    optional string url =2;
+	    optional bool copy_to_serial_flash =4;
+	    optional bool reset_network_processor =5;
+	    optional bool reset_application_processor =6;
+	    optional string serial_flash_filename =7;
+	    optional string serial_flash_path =8;
+	    optional string sd_card_filename =3;
+	    optional string sd_card_path =9;
+	    optional bytes sha1 = 10;
+	}
 
 	enum FileStatusType {
 		DOWNLOAD_COMPLETED = 0;
