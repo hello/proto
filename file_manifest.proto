@@ -11,14 +11,15 @@ message FileManifest {
 
 	message FileOperationError {
 
-		enum MemoryHealthType {
+		enum ErrorType {
 			NO_ERROR = 0;
 			READ_ERROR = 1;	
 			WRITE_ERROR = 2;
 		}
 
-		optional MemoryHealthType sd_card_health = 1;
-		optional int32 err_code = 2;
+		optional string filename = 1;
+		optional ErrorType err_type = 2;
+		optional int32 err_code = 3;
 
 	}
 
@@ -26,7 +27,6 @@ message FileManifest {
 		optional FileDownload download_info = 1;
 		optional bool delete_file = 2;				// set by server if has_download_info = true
 		optional bool update_file =3;			// Set by server if file needs to be download, updated, or deleted.
-		repeated FileOperationError error_info = 4;	// list of all the file operation errors, per file, since last upload
 	}
 
 
@@ -55,5 +55,6 @@ message FileManifest {
 	optional int32 unix_time = 6;			// time at which message was created
 	optional LinkHealth link_health = 7;
 	optional MemoryInfo sd_card_size = 8;
+	repeated FileOperationError error_info = 9;	// list of all the file operation errors, per file, since last upload
 
 }
