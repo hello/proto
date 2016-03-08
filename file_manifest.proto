@@ -25,7 +25,7 @@ message FileManifest {
 	message File {
 		optional FileDownload download_info = 1;
 		optional bool delete_file = 2;				// set by server if has_download_info = true
-		optional bool has_download_info =3;			// Set by server if file needs to be download, updated, or deleted.
+		optional bool update_file =3;			// Set by server if file needs to be download, updated, or deleted.
 		repeated FileOperationError error_info = 4;	// list of all the file operation errors, per file, since last upload
 	}
 
