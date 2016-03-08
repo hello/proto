@@ -4,28 +4,12 @@ message FileManifest {
 	message FileDownload {
 	    optional string host =1;
 	    optional string url =2;
-	    optional bool copy_to_serial_flash =4;
-	    optional bool reset_network_processor =5;
-	    optional bool reset_application_processor =6;
-	    optional string serial_flash_filename =7;
-	    optional string serial_flash_path =8;
 	    optional string sd_card_filename =3;
-	    optional string sd_card_path =9;
-	    optional bytes sha1 = 10;
+	    optional string sd_card_path =4;
+	    optional bytes sha1 = 5;
 	}
 
-	enum FileStatusType {
-		DOWNLOAD_COMPLETED = 0;
-		DOWNLOAD_PENDING = 1;
-	}
-
-	message File {
-		required FileDownload download_info = 1;
-		optional bool delete_file = 2;				// set by server if has_download_info = true
-		optional bool has_download_info =3;			// Set by server if file needs to be download, updated, or deleted.
-	}
-
-	message SDCard {
+	message FileOperationError {
 
 		enum MemoryHealthType {
 			NO_ERROR = 0;
@@ -35,22 +19,41 @@ message FileManifest {
 
 		optional MemoryHealthType sd_card_health = 1;
 		optional int32 err_code = 2;
-		optional uint32 total_memory = 3;
-		optional uint32 free_memory = 4;
+
 	}
+
+	message File {
+		required FileDownload download_info = 1;
+		optional bool delete_file = 2;				// set by server if has_download_info = true
+		optional bool has_download_info =3;			// Set by server if file needs to be download, updated, or deleted.
+		repeated FileOperationError error_info = 4;	// list of all the file operation errors, per file, since last upload
+	}
+
+
+	enum FileStatusType {
+		DOWNLOAD_COMPLETED = 0;
+		DOWNLOAD_PENDING = 1;
+	}	
 
 	message LinkHealth {
 		optional uint32 send_errors = 1;
 		optional uint32 recv_errors = 2;
 	}
 
+	message MemoryInfo {
+		optional uint32 total_memory = 1;
+		optional uint32 free_memory = 2;		// in bytes
+		optional bool sd_card_failure = 3;		// set when there is a complete SD card failure, false otherwise
+
+	}
+
 	repeated File file_info = 1;
 	optional FileStatusType file_status = 2; // set if there are items in the download queue which are pending
-	optional SDCard memory_info = 3;
-	optional uint32 device_uptime = 4;
-	optional int32 query_delay = 5; 		// delay between requests in seconds, set by server
-	optional int32 firmware_version = 6;
-	optional int32 unix_time = 7;			// time at which message was created
-	optional LinkHealth link_health = 8;
+	optional uint32 device_uptime = 3;
+	optional uint32 query_delay = 4; 		// delay between requests in seconds, set by server; on device reset: 15 minutes
+	optional int32 firmware_version = 5;
+	optional int32 unix_time = 6;			// time at which message was created
+	optional LinkHealth link_health = 7;
+	optional MemoryInfo sd_card_size = 8;
 
 }
