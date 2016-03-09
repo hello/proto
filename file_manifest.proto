@@ -36,8 +36,8 @@ message FileManifest {
 	}	
 
 	message LinkHealth {
-		optional uint32 send_errors = 1;
-		optional uint32 recv_errors = 2;
+		optional uint32 send_errors = 1; // a count of send errors that occured since the previous successful upload 
+		optional uint32 time_to_response = 2; // Time, in minutes, from when message is sent for transmit to when a response is received from the server
 	}
 
 	message MemoryInfo {
@@ -50,11 +50,12 @@ message FileManifest {
 	repeated File file_info = 1;
 	optional FileStatusType file_status = 2; // set if there are items in the download queue which are pending
 	optional uint32 device_uptime = 3;
-	optional uint32 query_delay = 4; 		// delay between requests in seconds, set by server; on device reset: 15 minutes
+	optional uint32 query_delay = 4; 		// delay between requests in minutes, set by server; on device reset: 15 minutes
 	optional int32 firmware_version = 5;
 	optional int32 unix_time = 6;			// time at which message was created
 	optional LinkHealth link_health = 7;
 	optional MemoryInfo sd_card_size = 8;
 	repeated FileOperationError error_info = 9;	// list of all the file operation errors, per file, since last upload
+	optional string sense_id = 10;
 
 }
