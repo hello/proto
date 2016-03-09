@@ -4,12 +4,6 @@ option java_package = "is.hello.orders.api";
 
 message Order {
 
-    enum SkuType {
-        SENSE_COTTON = 1;    // "sense_cotton"
-        SENSE_CHARCOAL = 2   // "sense_charcoal"
-        PILL_COTTON = 3;     // "pill_cotton"
-    }
-
     optional string email = 1;
 
     optional string shipping_address_name = 2;
@@ -20,16 +14,20 @@ message Order {
     optional string shipping_address_state  = 7;
     optional string shipping_address_country = 8;
 
-    optional bool extra_pills = 9;
-    optional int32 total = 10;
-    repeated SkuType skus = 11;
+    // total charged, includes tax
+    optional int32 total = 9;
 
-    optional string external_id = 12;
-    optional int64 created = 13;
+    // skus
+    optional int32 sense_cotton_qty = 10;
+    optional int32 sense_charcoal_qty = 11;
+    optional int32 pill_cotton_qty = 12;
 
-    optional string first_name = 14;
-    optional string last_name = 15;
+    optional string external_id = 13; // order-id
+    optional int64 created = 14;
 
-    optional string shipping_phone_number = 16;
-    optional string shipping_phone_number_country_code = 17;
+    optional string first_name = 15;
+    optional string last_name = 16;
+
+    optional string shipping_phone_number = 17;
+    optional string shipping_phone_number_country_code = 18;
 }
