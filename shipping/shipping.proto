@@ -1,0 +1,33 @@
+package hello;
+
+option java_package = "is.hello.orders.api";
+
+message Order {
+
+    optional string email = 1;
+
+    optional string shipping_address_name = 2;
+    optional string shipping_address_line1 = 3;
+    optional string shipping_address_line2 = 4;
+    optional string shipping_address_city = 5;
+    optional string shipping_address_zip  = 6;
+    optional string shipping_address_state  = 7;
+    optional string shipping_address_country = 8;
+
+    // total charged, includes tax
+    optional int32 total = 9;
+
+    // skus
+    optional int32 sense_cotton_qty = 10;
+    optional int32 sense_charcoal_qty = 11;
+    optional int32 pill_cotton_qty = 12;
+
+    optional string external_id = 13; // order-id
+    optional int64 created = 14;
+
+    optional string first_name = 15;
+    optional string last_name = 16;
+
+    optional string shipping_phone_number = 17;
+    optional string shipping_phone_number_country_code = 18;
+}
