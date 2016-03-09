@@ -1,0 +1,38 @@
+package hello;
+
+option java_package = "is.hello.orders.api";
+
+message Order {
+    optional string email = 1;
+
+    optional string shipping_address_name = 2;
+    optional string shipping_address_line1 = 3;
+    optional string shipping_address_line2 = 4;
+    optional string shipping_address_city = 5;
+    optional string shipping_address_zip  = 6;
+    optional string shipping_address_state  = 7;
+
+    optional string braintree_customer_id  = 8;
+    optional string braintree_transaction_id  = 9;
+    optional string braintree_authorization_code = 10;
+    optional string transaction_type = 11;
+    
+    optional bool extra_pills = 12;
+    optional int32 total = 13;
+    repeated string skus = 14;
+
+    optional string external_id = 15;
+    optional bool from_kickstarter = 16;
+    optional int64 created = 17;
+    optional string first_name = 18;
+    optional string last_name = 19;
+
+    optional string shipping_phone_number = 20;
+    optional string shipping_phone_number_country_code = 21;
+    optional string shipping_address_country = 22;
+    
+    optional bool cancelled = 23;
+    optional string status = 24;
+    optional int64 status_created = 25;
+    optional string phone_os = 26;
+}
