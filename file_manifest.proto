@@ -1,3 +1,5 @@
+option java_package = "com.hello.suripu.api.input";
+option java_outer_classname = "FileSync";
 
 message FileManifest {
 
