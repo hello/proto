@@ -1,0 +1,21 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "NeuralNetMessages";
+
+message DataVector {
+    repeated double vec = 1;
+    optional string id = 2;
+}
+
+message NeuralNetInput {
+    optional string net_id = 1; //requested net ID
+    repeated DataVector mat = 2;
+}
+
+
+message NeuralNetOutput {
+    optional bool success = 1; 
+    repeated DataVector mat = 2;
+    optional string error_message = 3;
+}

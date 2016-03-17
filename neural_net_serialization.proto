@@ -1,0 +1,17 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.datascience";
+option java_outer_classname = "NeuralNetProtos";
+
+
+
+message NeuralNetMessage {
+    enum InputType {
+        DIFFLIGHT = 0;
+    }
+
+    optional string id = 1;
+    optional bytes params = 2; 
+    optional string configuration = 3;
+    optional InputType input_type = 4;
+}

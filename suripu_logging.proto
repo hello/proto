@@ -98,6 +98,7 @@ message TimelineLog {
         HMM = 2;
         VOTING = 3;
         ONLINE_HMM = 4;
+        NEURAL_NET = 5;
     }
 
     enum SleepEventType {
