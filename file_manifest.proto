@@ -3,14 +3,14 @@ option java_outer_classname = "FileSync";
 
 message FileManifest {
 
-	message FileDownload {
-	    optional string host =1;
-	    optional string url =2;
-	    optional string sd_card_filename =3;
-	    optional string sd_card_path =4;
-	    optional bytes sha1 = 5;
-	}
-
+    message FileDownload {
+        optional string host =1;
+        optional string url =2;
+        optional string sd_card_filename =3;
+        optional string sd_card_path =4;
+        optional bytes sha1 = 5;   
+    }
+    
 	message FileOperationError {
 
 		enum ErrorType {
@@ -51,13 +51,13 @@ message FileManifest {
 
 	repeated File file_info = 1;
 	optional FileStatusType file_status = 2; // set if there are items in the download queue which are pending
-	optional uint32 device_uptime = 3;
+	optional uint32 device_uptime_in_seconds = 3;		// in seconds
 	optional uint32 query_delay = 4; 		// delay between requests in minutes, set by server; on device reset: 15 minutes
 	optional int32 firmware_version = 5;
 	optional int32 unix_time = 6;			// time at which message was created
 	optional LinkHealth link_health = 7;
 	optional MemoryInfo sd_card_size = 8;
-	repeated FileOperationError error_info = 9;	// list of all the file operation errors, per file, since last upload
+	repeated FileOperationError error_info = 9;	// list of all the file operation errors, per file, since last upload. Max items - 10
 	optional string sense_id = 10;
 
 }
