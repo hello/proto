@@ -1,0 +1,12 @@
+option java_package = "com.hello.messeji.api";
+
+import "messeji.proto";
+
+message RequestLog {
+
+    enum Type { MESSAGE = 0; RECEIVE_MESSAGE_REQUEST = 1; }
+
+    required Type type = 1;
+    optional Message message_request = 2;
+    optional ReceiveMessageRequest receive_message_request = 3;
+}
