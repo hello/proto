@@ -10,3 +10,4 @@ message RequestLog {
     optional Message message_request = 2;
     optional ReceiveMessageRequest receive_message_request = 3;
 }
+
