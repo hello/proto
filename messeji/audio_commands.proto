@@ -10,4 +10,5 @@ message PlayAudio {
     optional uint32 duration_seconds = 3; // Play for `duration` seconds. If not present, play audio indefinitely.
     required uint32 fade_in_duration_seconds = 4;
     required uint32 fade_out_duration_seconds = 5;
+    optional uint32 timeout_fade_out_duration_seconds = 6;
 }
