@@ -10,5 +10,6 @@ message RequestLog {
     optional uint64 timestamp = 2;
     optional Message message_request = 3;
     optional ReceiveMessageRequest receive_message_request = 4;
+    optional string sense_id = 5;
 }
 
