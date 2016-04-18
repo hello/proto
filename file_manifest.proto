@@ -44,7 +44,7 @@ message FileManifest {
 
 	message MemoryInfo {
 		optional uint32 total_memory = 1;
-		optional uint32 free_memory = 2;		// in bytes
+		optional uint32 free_memory = 2;		// in kilobytes
 		optional bool sd_card_failure = 3;		// set when there is a complete SD card failure, false otherwise
 
 	}
