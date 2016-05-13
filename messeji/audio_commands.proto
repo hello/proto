@@ -7,7 +7,7 @@ message StopAudio {
 message PlayAudio {
     required string file_path = 1; // “/proc/noise"
     required uint32 volume_percent = 2; // As a percent [0, 100]
-    optional uint32 duration_seconds = 3; // Play for `duration` seconds. If not present, play audio indefinitely.
+    optional uint32 duration_seconds = 3; // Play for `duration` seconds. If 0, play audio indefinitely.
     required uint32 fade_in_duration_seconds = 4;
     required uint32 fade_out_duration_seconds = 5;
     optional uint32 timeout_fade_out_duration_seconds = 6;
