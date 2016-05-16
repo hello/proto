@@ -1,0 +1,20 @@
+import "insight.proto";
+import "sleep_score.proto";
+import "room_conditions.proto";
+import "device_status.proto";
+
+option java_package = "com.hello.suripu.api.notifications";
+option java_outer_classname = "PushNotification";
+
+message UserPushNotification {
+    optional uint64 account_id = 1;
+    optional uint64 timestamp_generated_millis = 2;
+
+    // Place the actual alerts at 100+ so we have room to add more attributes before them without having weird orderings.
+    optional PillBatteryLow pill_battery_low = 100;
+    optional NewInsight new_insight = 102;
+    optional RoomConditionAlert room_condition_alert = 103;
+    optional NewSleepScore new_sleep_score = 104;
+    optional SenseOffline sense_offline = 105;
+    optional PillOffline pill_offline = 106;
+}
