@@ -13,5 +13,4 @@ message RoomConditionAlert {
     optional Sensor sensor = 1;
     optional int64 value = 2;       // The sensor value
     optional int64 threshold = 3;   // The threshold that triggered the alert
-    optional string sense_id = 4;
 }

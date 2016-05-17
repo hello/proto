@@ -8,7 +8,7 @@ option java_outer_classname = "PushNotification";
 
 message UserPushNotification {
     optional uint64 account_id = 1;
-    optional uint64 timestamp_generated_millis = 2;
+    optional string sense_id = 2;
 
     // Place the actual alerts at 100+ so we have room to add more attributes before them without having weird orderings.
     optional PillBatteryLow pill_battery_low = 100;

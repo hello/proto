@@ -1,8 +1,7 @@
 option java_package = "com.hello.suripu.workers.protobuf.notifications";
 
 message SenseOffline  {
-    optional string sense_id = 1;
-    optional uint64 last_seen_timestamp_millis = 2;     // When did we last see this sense?
+    optional uint64 last_seen_timestamp_millis = 1;     // When did we last see this sense?
 }
 
 message PillOffline {
