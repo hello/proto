@@ -1,4 +1,4 @@
-option java_package = "com.hello.suripu.api.notifications";
+option java_package = "com.hello.suripu.workers.protobuf.notifications";
 
 message RoomConditionAlert {
 

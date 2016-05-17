@@ -3,7 +3,7 @@ import "sleep_score.proto";
 import "room_conditions.proto";
 import "device_status.proto";
 
-option java_package = "com.hello.suripu.api.notifications";
+option java_package = "com.hello.suripu.workers.protobuf.notifications";
 option java_outer_classname = "PushNotification";
 
 message UserPushNotification {
