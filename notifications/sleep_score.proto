@@ -1,0 +1,6 @@
+option java_package = "com.hello.suripu.workers.protobuf.notifications";
+
+message NewSleepScore {
+    optional int32 score = 1;
+    optional string date = 2;
+}
