@@ -29,6 +29,15 @@ message periodic_data {
     optional uint32 pressure = 22; // in Q24.8 format (24 integer bits and 8 fractional bits). // Output value of “24674867” represents 24674867/256 = 96386.2 Pa = 963.862 hPa
     optional int32 tvoc = 23; //from 0 - 1000 ppb
     optional int32 co2 = 24; //from 400 - 5000 ppm
+
+    optional int32 infrared = 25;
+	
+	message rgb_data {
+		required int32 r = 1;
+		required int32 g = 2;
+		required int32 b = 3;
+	}
+    optional rgb_data rgb  = 26;
 }
 
 message batched_periodic_data {
