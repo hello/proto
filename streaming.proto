@@ -1,0 +1,14 @@
+message Preamble {
+    enum pb_type {
+        ACK = 0;
+        BATCHED_PERIODIC_DATA = 1;
+        SENSE_LOG = 2;
+        SYNC_RESPONSE = 3;
+        MATRIX_CLIENT_MESSAGE = 4;
+        MESSEJI = 5;
+    }
+    // Payload Type
+    required pb_type type = 1;
+    // Unique ID associated with the payload
+    optional int64 message_id = 2;
+}
