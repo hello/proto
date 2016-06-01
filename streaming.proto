@@ -1,4 +1,4 @@
-message Preamble {
+message Header {
     enum pb_type {
         ACK = 0;
         BATCHED_PERIODIC_DATA = 1;
