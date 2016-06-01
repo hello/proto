@@ -10,5 +10,5 @@ message Header {
     // Payload Type
     required pb_type type = 1;
     // Unique ID associated with the payload
-    optional int64 id = 2;
+    optional uint64 id = 2;
 }
