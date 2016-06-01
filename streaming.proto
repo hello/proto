@@ -10,5 +10,5 @@ message Preamble {
     // Payload Type
     required pb_type type = 1;
     // Unique ID associated with the payload
-    optional int64 message_id = 2;
+    optional int64 id = 2;
 }
