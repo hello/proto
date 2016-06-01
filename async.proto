@@ -1,0 +1,5 @@
+option java_package = "com.hello.suripu.api";
+
+message Ack {
+    repeated uint64 message_id = 1;
+}
