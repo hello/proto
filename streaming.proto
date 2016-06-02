@@ -1,0 +1,18 @@
+message Preamble {
+    enum pb_type {
+        ACK = 0;
+        BATCHED_PERIODIC_DATA = 1;
+        SENSE_LOG = 2;
+        SYNC_RESPONSE = 3;
+        MATRIX_CLIENT_MESSAGE = 4;
+        MESSEJI = 5;
+    }
+    enum auth_type {
+        NO_AUTH = 0;                                //no authentication, reserved 0 bytes
+        HMAC = 1;                                   //authenticated message with HMAC1, reserved 20 bytes at end of the messsage.
+        HMAC_SHA1 = 2;                              //authenticated stream with RFC2104HMAC/SHA1, reserved 40 bytes (SHA1 + HMAC1) first chunk then 20 for subsequent chunks
+    }
+    required pb_type type = 1;                      //payload type
+    optional uint64 id = 2;                         //unique id associated with the payload
+    optional auth_type auth = 3;                    //authentication scheme used for the message
+}
