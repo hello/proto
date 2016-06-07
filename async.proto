@@ -1,4 +1,4 @@
-option java_package = "com.hello.suripu.api";
+option java_package = "com.hello.haneda.api";
 
 message Ack {
     repeated uint64 message_id = 1;
