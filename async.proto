@@ -1,5 +1,14 @@
 option java_package = "com.hello.haneda.api";
 
 message Ack {
+
+    enum Status {
+        SUCCESS = 1;
+        CLIENT_ENCODING_ERROR = 2;
+        CLIENT_REQUEST_ERROR = 3;
+        SERVER_ERROR = 4;
+    }
+
     repeated uint64 message_id = 1;
+    optional Status status = 2;
 }
