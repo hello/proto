@@ -15,4 +15,5 @@ message Preamble {
     required pb_type type = 1;                      //payload type
     optional uint64 id = 2;                         //unique id associated with the payload
     optional auth_type auth = 3;                    //authentication scheme used for the message
+    optional uint32 chunk_size = 4;                 //the size of each stream chunk
 }
