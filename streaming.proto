@@ -9,8 +9,8 @@ message Preamble {
     }
     enum auth_type {
         NO_AUTH = 0;                                //no authentication, reserved 0 bytes
-//        HMAC = 1;                                 //not used
-        HMAC_SHA1 = 2;                              //authenticated stream with RFC2104HMAC/SHA1, reserved 40 bytes (SHA1 + HMAC1)
+        //HMAC = 1;                                   //authenticated message with RFC2104HMAC at the end, reserved 20 bytes for the entire message.
+        HMAC_SHA1 = 2;                              //authenticated stream with a running hmac of previous payload data.  reserved 20 bytes for each chunk
     }
     required pb_type type = 1;                      //payload type
     optional uint64 id = 2;                         //unique id associated with the payload
