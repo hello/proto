@@ -9,6 +9,6 @@ message Ack {
         SERVER_ERROR = 4;           // A server-side error occurred (5xx error)
     }
 
-    repeated uint64 message_id = 1;
+    optional uint64 message_id = 1;
     optional Status status = 2;
 }
