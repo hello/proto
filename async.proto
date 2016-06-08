@@ -1,5 +1,14 @@
-option java_package = "com.hello.suripu.api";
+option java_package = "com.hello.haneda.api";
 
 message Ack {
-    repeated uint64 message_id = 1;
+
+    enum Status {
+        SUCCESS = 1;                // All good in the hood (2xx response)
+        CLIENT_ENCODING_ERROR = 2;  // Message was improperly formatted before reading payload
+        CLIENT_REQUEST_ERROR = 3;   // Payload of the message was incorrect (4xx error)
+        SERVER_ERROR = 4;           // A server-side error occurred (5xx error)
+    }
+
+    optional uint64 message_id = 1;
+    optional Status status = 2;
 }
