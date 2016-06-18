@@ -18,6 +18,7 @@ message SyncResponse {
         optional string sd_card_filename =3;
         optional string sd_card_path =9;
         optional bytes sha1 = 10;   
+        optional bytes signature = 11;
     }
 
     message Alarm {
