@@ -2,6 +2,7 @@
 
 option java_package = "com.hello.suripu.api.audio";
 option java_outer_classname = "AudioControlProtos";
+option go_package = "api";
 
 message AudioClassifierMessage {
     enum ClassifierType {
