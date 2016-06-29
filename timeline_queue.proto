@@ -1,0 +1,9 @@
+option java_package = "com.hello.suripu.api.queue";
+option java_outer_classname = "TimelineQueueProtos";
+
+
+message Message {
+	optional int64 account_id = 1;
+	optional string target_date = 2;
+	optional int64 timestamp = 3;
+}
