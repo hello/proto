@@ -1,4 +1,5 @@
 option java_package = "com.hello.messeji.api";
+option go_package = "messeji";
 
 import "messeji.proto";
 
