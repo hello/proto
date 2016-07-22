@@ -5,11 +5,12 @@ message SpeechResponse {
 	enum Result {
 		OK = 0;
 		UNKNOWN = 1;
-		REJECTED = 2;
-		TRY_AGAIN = 3;
+		REJECTED = 2; // e.g. google api error, no commands
+		TRY_AGAIN = 3; // do not understand
 	}
 
     optional string url = 1; // url to stream voice response from
     optional string text = 2; // text sent as a response to the command
     optional Result result = 3; // status of the voice command
+    optional uint32 audio_stream_size = 4;
 }
