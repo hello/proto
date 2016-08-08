@@ -35,10 +35,11 @@ message periodic_data {
         required int32 b = 3;
         optional int32 infrared = 4;
         optional int32 clear = 5;
-        optional lux_count = 6;
-        optiona uv_count = 7;
+        optional int32 lux_count = 6;
+        optional int32 uv_count = 7;
     }
-    optional light_data   = 25;
+
+    optional light_data light_sensor   = 25;
 }
 
 message batched_periodic_data {
