@@ -34,8 +34,10 @@ message periodic_data {
         required int32 r = 1;
         required int32 g = 2;
         required int32 b = 3;
-        required int32 infrared = 4;
-        required int32 clear = 5; // not sure if this is the right denomination
+        optional int32 infrared = 4;
+        optional int32 clear = 5;
+        optional lux_count = 6;
+        optiona uv_count = 7;
     }
     
     optional light_data   = 25;
