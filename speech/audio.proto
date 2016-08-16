@@ -1,7 +1,9 @@
-option java_package = "is.hello.speech.api";
+option java_package = "is.hello.speech.core.api";
 
 message AudioBytes {
     optional string filename = 1;	// s3 keyname to save speech audio format: aid_uuid.wav
     optional uint32 data_size = 2;	// audio data size
     optional bytes data = 3;		// raw audio data
+    optional int32 account_id = 4;
+    optional string sense_id = 5;
 }
