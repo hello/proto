@@ -32,16 +32,33 @@ message wifi_endpoint {
 	*/
 	enum sec_type {
 		/*
-		#define SL_SCAN_SEC_TYPE_OPEN                                                                           (0)
-		#define SL_SCAN_SEC_TYPE_WEP                                                                            (1)
-		#define SL_SCAN_SEC_TYPE_WPA                                                                            (2) 
-		#define SL_SCAN_SEC_TYPE_WPA2                                                                           (3)
+        from wlan.h
+        #define SL_WLAN_SEC_TYPE_OPEN                                                                                (0)
+        #define SL_WLAN_SEC_TYPE_WEP                                                                                 (1)
+        #define SL_WLAN_SEC_TYPE_WPA                                                                                 (2) /* deprecated */
+        #define SL_WLAN_SEC_TYPE_WPA_WPA2                                                                            (2)
+        #define SL_WLAN_SEC_TYPE_WPS_PBC                                                                             (3)
+        #define SL_WLAN_SEC_TYPE_WPS_PIN                                                                             (4)
+        #define SL_WLAN_SEC_TYPE_WPA_ENT                                                                             (5)
+        #define SL_WLAN_SEC_TYPE_P2P_PBC                                                                             (6)
+        #define SL_WLAN_SEC_TYPE_P2P_PIN_KEYPAD                                                                      (7)
+        #define SL_WLAN_SEC_TYPE_P2P_PIN_DISPLAY                                                                     (8)
+        #define SL_WLAN_SEC_TYPE_P2P_PIN_AUTO                                                                        (9) /* NOT Supported yet */
+        #define SL_WLAN_SEC_TYPE_WEP_SHARED                                                                          (10)
+        Warning - keep these matching
 		*/
 
 		SL_SCAN_SEC_TYPE_OPEN = 0;
 		SL_SCAN_SEC_TYPE_WEP = 1;
 		SL_SCAN_SEC_TYPE_WPA = 2;
-		SL_SCAN_SEC_TYPE_WPA2 = 3;
+		SL_WLAN_SEC_TYPE_WPS_PBC = 3;
+		SL_WLAN_SEC_TYPE_WPS_PIN = 4;
+		SL_WLAN_SEC_TYPE_WPA_ENT = 5;
+		SL_WLAN_SEC_TYPE_P2P_PBC = 6;
+		SL_WLAN_SEC_TYPE_P2P_PIN_KEYPAD = 7;
+		SL_WLAN_SEC_TYPE_P2P_PIN_DISPLAY = 8;
+		SL_WLAN_SEC_TYPE_P2P_PIN_AUTO = 9;
+		SL_WLAN_SEC_TYPE_WEP_SHARED = 10;
 
 	}
 	required string ssid = 1;
