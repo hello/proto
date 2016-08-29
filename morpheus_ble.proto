@@ -35,7 +35,7 @@ message wifi_endpoint {
         from wlan.h
         #define SL_WLAN_SEC_TYPE_OPEN                                                                                (0)
         #define SL_WLAN_SEC_TYPE_WEP                                                                                 (1)
-        #define SL_WLAN_SEC_TYPE_WPA                                                                                 (2) /* deprecated */
+        #define SL_WLAN_SEC_TYPE_WPA                                                                                 (2) 
         #define SL_WLAN_SEC_TYPE_WPA_WPA2                                                                            (2)
         #define SL_WLAN_SEC_TYPE_WPS_PBC                                                                             (3)
         #define SL_WLAN_SEC_TYPE_WPS_PIN                                                                             (4)
@@ -43,7 +43,7 @@ message wifi_endpoint {
         #define SL_WLAN_SEC_TYPE_P2P_PBC                                                                             (6)
         #define SL_WLAN_SEC_TYPE_P2P_PIN_KEYPAD                                                                      (7)
         #define SL_WLAN_SEC_TYPE_P2P_PIN_DISPLAY                                                                     (8)
-        #define SL_WLAN_SEC_TYPE_P2P_PIN_AUTO                                                                        (9) /* NOT Supported yet */
+        #define SL_WLAN_SEC_TYPE_P2P_PIN_AUTO                                                                        (9) 
         #define SL_WLAN_SEC_TYPE_WEP_SHARED                                                                          (10)
         Warning - keep these matching
 		*/
