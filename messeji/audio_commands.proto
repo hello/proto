@@ -12,3 +12,7 @@ message PlayAudio {
     required uint32 fade_out_duration_seconds = 5;
     optional uint32 timeout_fade_out_duration_seconds = 6;
 }
+
+message Volume {
+    required uint32 volume = 1;
+}
