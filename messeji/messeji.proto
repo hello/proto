@@ -30,6 +30,8 @@ message Message {
     optional PlayAudio play_audio = 5;
 
     optional StopAudio stop_audio = 6;
+
+    optional Volume volume = 7;
 }
 
 
