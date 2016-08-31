@@ -41,6 +41,8 @@ message periodic_data {
     }
     
     optional light_data light_sensor   = 25;
+
+    optional int32 light_duration_ms   = 26;
 }
 
 message batched_periodic_data {
