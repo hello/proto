@@ -1,0 +1,16 @@
+//package hello;
+
+
+
+enum keyword {
+    NULL = 0;
+    OK_SENSE = 1;
+    STOP = 2;
+    SNOOZE = 3;
+    ALEXA = 4;
+}
+
+message speech_data {
+    optional keyword word = 1;
+    optional int32 confidence = 2; /* 0 - 127 */
+}
