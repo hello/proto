@@ -13,4 +13,5 @@ enum keyword {
 message speech_data {
     optional keyword word = 1;
     optional int32 confidence = 2; /* 0 - 127 */
+    optional int32 version = 3;
 }
