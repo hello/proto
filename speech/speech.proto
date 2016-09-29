@@ -1,8 +1,20 @@
-//package hello;
+package speech;
 
+option java_package = "is.hello.speech.core.api";
+option java_outer_classname = "Speech";
 
+enum Equalizer {
+	NONE = 0;
+	SENSE_ONE = 1;
+}
 
-enum keyword {
+enum AudioFormat {
+	MP3 = 0;
+	ADPCM = 1;
+	RAW = 2;
+}
+
+enum Keyword {
     NULL = 0;
     OK_SENSE = 1;
     STOP = 2;
@@ -10,8 +22,11 @@ enum keyword {
     ALEXA = 4;
 }
 
-message speech_data {
-    optional keyword word = 1;
+message SpeechRequest {
+    optional Keyword word = 1;
     optional int32 confidence = 2; /* 0 - 127 */
     optional int32 version = 3;
+    optional Equalizer eq = 4 [default = SENSE_ONE];
+    optional AudioFormat response = 5 [default = MP3];
+    optional int32 sampling_rate = 6 [default = 16000];
 }
