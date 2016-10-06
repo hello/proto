@@ -1,5 +1,6 @@
 //package hello;
 
+import "keyword_stats.proto";
 option java_package = "com.hello.suripu.api.input";
 option java_outer_classname = "DataInputProtos";
 
@@ -41,6 +42,7 @@ message periodic_data {
     }
     
     optional light_data light_sensor   = 25;
+    optional KeywordStats keyword_stats = 26;
 }
 
 message batched_periodic_data {
