@@ -40,7 +40,8 @@ message periodic_data {
     }
 
     optional light_data light_sensor   = 25;
-    optional KeywordStats keyword_stats = 26;
+    //optional int32 light_duration = 26;
+    optional KeywordStats keyword_stats = 27;
 }
 
 message batched_periodic_data {
