@@ -8,6 +8,7 @@ enum keyword {
     STOP = 2;
     SNOOZE = 3;
     ALEXA = 4;
+    OKAY = 5;
 }
 
 message speech_data {
