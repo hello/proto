@@ -32,6 +32,8 @@ message Message {
     optional StopAudio stop_audio = 6;
 
     optional Volume volume = 7;
+
+    optional VoiceControl voice_control = 8;
 }
 
 
