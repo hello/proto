@@ -8,7 +8,7 @@ message IndividualKeywordHistogram {
 }
 
 message KeywordActivation {
-    optional int64 time_counter = 1; //not be be confused with wall-time
+    optional sint64 time_counter = 1; //not be be confused with wall-time
     optional keyword key_word = 2;
 }
 
