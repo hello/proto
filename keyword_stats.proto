@@ -1,7 +1,5 @@
 //package hello;
 
-import "speech/speech.proto";
-
 message IndividualKeywordHistogram {
     repeated sint32 histogram_counts = 1; //bins, say 0 to 1.0 in chunks the size of 0.1, representing the counts of how often in each bin
     optional keyword key_word = 2; 
@@ -9,7 +7,7 @@ message IndividualKeywordHistogram {
 
 message KeywordActivation {
     optional sint64 time_counter = 1; //not be be confused with wall-time
-    optional keyword key_word = 2;
+    optional sint32 key_word_index = 2;
 }
 
 
