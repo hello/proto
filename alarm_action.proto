@@ -1,11 +1,11 @@
 //package hello;
 
-option java_package = "com.hello.suripu.api.output";
-option java_outer_classname = "AlarmAction";
+option java_package = "com.hello.suripu.api.expansions";
+option java_outer_classname = "ExpansionProtos";
 //Alarm actions (expansions)
 
 
-message alarm_action {
+message AlarmAction {
     optional uint64 unix_time = 1;
     optional string device_id = 2;
     optional uint64 expected_ringtime_utc = 3;
