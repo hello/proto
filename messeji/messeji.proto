@@ -11,7 +11,7 @@ message ReceiveMessageRequest {
 
 message Message {
 
-    enum Type { PLAY_AUDIO = 0; STOP_AUDIO = 1; }
+    enum Type { PLAY_AUDIO = 0; STOP_AUDIO = 1; SET_VOLUME = 2; VOICE_CONTROL = 3; }
 
     // Unique ID associated with the sender, in order to disambiguate between multiple senders
     // each generating their own idea of an “order” (see below)
