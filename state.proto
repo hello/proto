@@ -10,4 +10,6 @@ message AudioState {
 message SenseState {
     required string sense_id = 1;
     optional AudioState audio_state = 2;
+    optional uint32 volume = 3;
+    optional bool voice_control_enabled = 4;
 }
