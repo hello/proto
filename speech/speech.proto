@@ -1,6 +1,6 @@
 package speech;
 
-option java_package = "is.hello.speech.core.api";
+option java_package = "is.hello.supichi.api";
 option java_outer_classname = "Speech";
 
 enum Equalizer {

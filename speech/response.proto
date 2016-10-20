@@ -1,4 +1,4 @@
-option java_package = "is.hello.speech.api";
+option java_package = "is.hello.supichi.api";
 
 message SpeechResponse {
 
@@ -7,6 +7,7 @@ message SpeechResponse {
 		UNKNOWN = 1;
 		REJECTED = 2; // e.g. google api error, no commands
 		TRY_AGAIN = 3; // do not understand
+		UNPAIRED_SENSE = 4; // no sense paired
 	}
 
     optional string url = 1; // url to stream voice response from
