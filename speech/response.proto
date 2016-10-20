@@ -1,4 +1,4 @@
-option java_package = "is.hello.speech.api";
+option java_package = "is.hello.speech.core.api";
 
 message SpeechResponse {
 

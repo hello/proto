@@ -1,0 +1,69 @@
+option java_package = "is.hello.speech.core.api";
+option java_outer_classname = "Text2SpeechQueue";
+
+message SynthesizeMessage {
+
+	enum IntentType {
+		SLEEP_SOUNDS = 1;
+		ALARM = 2;
+		SLEEP_REPORT = 3;
+		ROOM_CONDITIONS = 4;
+		TRIVIA = 5;
+		TIME_REPORT = 6;
+	}
+
+	enum ActionType {
+		PLAY_SOUND = 1;
+		STOP_SOUND = 2;
+		GET_CONDITION = 3;	// overall condition
+		GET_SENSOR = 4;
+		GET_TRIVIA = 5;
+		GET_TIME = 6;
+	}
+
+	enum CategoryType {
+		DEFAULT = 1;
+		SOUND_NAME = 2;
+		SOUND_DURATION = 3;
+		SOUND_NAME_DURATION = 4;
+		OVERALL_CONDITIONS = 5;
+		TEMPERATURE = 6;
+		HUMIDITY = 7;
+		LIGHT = 8;
+		PARTICULATES = 9;
+		SOUND = 10;
+		TRIVIA_INFO = 11;
+		TIME = 12;
+	}
+
+	enum ServiceType {
+		WATSON = 1;
+	}
+
+	enum VoiceType {
+		ALLISON = 1;
+		MICHAEL = 2;
+	}
+
+	enum ResponseType {
+		SUCCESS = 1;
+		FAILURE = 2;
+		IDK = 3;
+		TIMEOUT = 4;
+		NETWORK_ERROR = 5;
+		API_ERROR = 6;
+		UNKNOWN_ERROR = 7;
+	}
+
+	optional int64 voice_response_id = 1;
+	optional string text = 2;
+	optional IntentType intent = 3;
+	optional ActionType action = 4;
+	optional CategoryType category = 5;
+	optional string parameters_string = 6;
+	optional ServiceType service = 7;
+	optional VoiceType voice = 8;
+	optional ResponseType response_type = 9;
+}
+
+
