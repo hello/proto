@@ -1,0 +1,34 @@
+// stores results for speech-timeline via Kinesis
+option java_package = "is.hello.supichi.api";
+option java_outer_classname = "SpeechResultsKinesis";
+
+message AudioData {
+    optional uint32 data_size = 1;	// audio data size
+    optional bytes data = 2;		// raw audio data
+}
+
+message SpeechResultsData {
+
+    enum Action {
+    	PUT_ITEM = 1;
+	UPDATE_ITEM = 2;
+	TIMELINE = 3;
+    }
+    optional int64 account_id = 1;
+    optional string sense_id = 2;
+    optional int64 created = 3;
+    optional string audio_uuid = 4;
+    optional AudioData audio = 5;
+    optional string text = 6;
+    optional string service = 7;
+    optional float confidence = 8;
+    optional string s3_keyname = 9;
+    optional string handler_type = 10;
+    optional string command = 11;
+    optional int32 wake_id = 12;
+    repeated float wake_confidence = 13;
+    optional string result = 14;
+    optional string response_text = 15;
+    optional int64 updated = 16;
+    optional Action action = 17;
+}
