@@ -16,3 +16,7 @@ message PlayAudio {
 message Volume {
     required uint32 volume = 1;
 }
+
+message VoiceControl {
+    required bool enable = 1;
+}
