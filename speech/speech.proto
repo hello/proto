@@ -1,4 +1,5 @@
 //package hello;
+option java_package = "is.hello.supichi.api";
 
 
 
