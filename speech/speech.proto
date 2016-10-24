@@ -30,4 +30,5 @@ message SpeechRequest {
     optional Equalizer eq = 4 [default = SENSE_ONE];
     optional AudioFormat response = 5 [default = MP3];
     optional int32 sampling_rate = 6 [default = 16000];
+    optional bool keepalive = 7;
 }
