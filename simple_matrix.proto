@@ -1,0 +1,15 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.audio";
+option java_outer_classname = "SimpleMatrixProtos";
+
+enum SimpleMatrixDataType {
+    SINT8 = 0;
+}
+
+message SimpleMatrix {
+    optional string id = 1;
+    optional sint32 num_cols = 2;
+    optional SimpleMatrixDataType data_type = 3;
+    repeated bytes payload = 4;
+}
