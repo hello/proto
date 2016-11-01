@@ -12,4 +12,5 @@ message SimpleMatrix {
     optional sint32 num_cols = 2;
     optional SimpleMatrixDataType data_type = 3;
     repeated bytes payload = 4;
+    optional string device_id = 5;
 }
