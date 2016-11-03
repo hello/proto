@@ -1,0 +1,11 @@
+//package hello;
+
+option java_package = "com.hello.suripu.api.audio";
+option java_outer_classname = "AudioFeaturesControlProtos";
+
+
+message AudioFeaturesControl {
+    optional bool enable_keyword_features = 1;
+
+}
+
