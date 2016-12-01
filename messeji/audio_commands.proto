@@ -22,10 +22,6 @@ message VoiceControl {
 }
 
 message LightControl {
-	enum Method {
-		POST = 0;
-	}
-	required string url = 1;
+	required string ip_address = 1;
 	required bytes body = 2;
-	required Method http_method = 3;
 }
