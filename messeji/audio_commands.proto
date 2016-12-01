@@ -21,7 +21,7 @@ message VoiceControl {
     required bool enable = 1;
 }
 
-message LightControl {
+message RemoteApiControl {
 	required string ip_address = 1;
 	required bytes body = 2;
 }
