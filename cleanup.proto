@@ -1,0 +1,29 @@
+option java_package = "com.hello.suripu.api.cleanup";
+option java_outer_classname = "CleanUp";
+
+
+message CleanupMessage {
+	required string requester = 1;
+	optional int64 timestamp = 2;
+
+	optional DisableAccount disable_account = 3;
+	optional ExpireOAuthTokens expire_oauth_tokens = 4;
+	optional RemoveExpansions remove_expansions = 5;
+}
+
+message DisableAccount {
+	required int64 account_id = 1;
+	required string email = 2;
+}
+
+message ExpireOAuthTokens {
+	required int64 account_id = 1;
+}
+
+message RemoveExpansions {
+	required string sense_id = 1;
+}
+
+
+
+
