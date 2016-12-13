@@ -1,0 +1,49 @@
+//package hello;
+
+import "timeline_sensor_data.proto";
+option java_package = "com.hello.suripu.api.input";
+option java_outer_classname = "TimelineSensorDataProtos";
+
+
+message Sample {
+    optional int64 timestamp = 1;
+    optional double value = 2;
+}
+
+message TrackerMotion {
+    required int64 timestamp = 1;
+    required double svm_mag = 2;
+    required double on_duration = 3;
+    optional int64 bitmask = 4;    
+}
+
+enum EventType {
+    IN_BED = 1;
+    SLEEP = 2;
+    WAKE_UP = 3;
+    OUT_OF_BED = 4;
+}
+
+message Event {
+    optional EventType event_type = 1;
+    optional int64 timestamp = 2;
+}
+
+message UserInfo {
+    optional int32 user_age = 1;
+    optional int32 user_weight_lbs = 2;
+}
+
+message OneDaysSensorData {
+    optional int64 account_id = 1;
+    optional string date_of_night = 2;
+    repeated TrackerMotion my_motion = 3;
+    repeated TrackerMotion partner_motion = 4;
+    repeated Sample light = 5;
+    repeated Sample waves = 6;
+    repeated Sample audio_peak_disturbance = 7;
+    repeated Sample audio_num_disturbances = 8;
+
+    optional UserInfo user_info = 10;
+    repeated Event timeline_feedback = 20;
+}
