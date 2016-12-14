@@ -27,6 +27,7 @@ enum EventType {
 message Event {
     optional EventType event_type = 1;
     optional int64 timestamp = 2;
+    optional int32 tz_offset = 3;
 }
 
 enum HardwareType {
