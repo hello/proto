@@ -6,6 +6,7 @@ option java_outer_classname = "TimelineSensorDataProtos";
 message Sample {
     optional int64 timestamp = 1;
     optional double value = 2;
+    optional int32 tz_offset = 3;
 }
 
 message TrackerMotion {
@@ -13,6 +14,7 @@ message TrackerMotion {
     required int32 svm_mag = 2;
     required int32 on_duration = 3;
     optional int64 bitmask = 4;    
+    optional int32 tz_offset = 5;
 }
 
 enum EventType {
