@@ -40,11 +40,17 @@ enum DeviceColor {
     CHARCOAL = 2;
 }
 
+enum Gender {
+    UNDISCLOSED = 1;
+    MALE = 2;
+    FEMALE = 3;
+}
+
 message UserInfo {
-    optional int32 age_years = 1;
-    optional int32 weight_grams = 2;
-    optional int32 height_cm = 3;
-    optional bool has_partner = 4;
+    optional int32 weight_grams = 1;
+    optional int32 height_cm = 2;
+    optional string date_of_birth = 3;
+    optional Gender gender = 4;
 }
 
 message OneDaysSensorData {
