@@ -41,7 +41,7 @@ enum DeviceColor {
 }
 
 enum Gender {
-    UNDISCLOSED = 1;
+    OTHER = 1;
     MALE = 2;
     FEMALE = 3;
 }
