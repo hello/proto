@@ -1,0 +1,73 @@
+//package hello;
+option java_package = "com.hello.alg.api";
+option java_outer_classname = "TimelineSensorDataProtos";
+
+
+message Sample {
+    optional int64 timestamp = 1;
+    optional double value = 2;
+    optional int32 tz_offset = 3;
+}
+
+message TrackerMotion {
+    required int64 timestamp = 1;
+    required int32 svm_mag = 2;
+    required int32 on_duration = 3;
+    optional int64 bitmask = 4;    
+    optional int32 tz_offset = 5;
+}
+
+enum EventType {
+    IN_BED = 1;
+    SLEEP = 2;
+    WAKE_UP = 3;
+    OUT_OF_BED = 4;
+}
+
+message Event {
+    optional EventType event_type = 1;
+    optional int64 timestamp = 2;
+    optional int32 tz_offset = 3;
+}
+
+enum HardwareType {
+    SENSE_1 = 1;
+    SENSE_1p5 = 2;
+}
+
+enum DeviceColor {
+    COTTON = 1;
+    CHARCOAL = 2;
+}
+
+enum Gender {
+    OTHER = 1;
+    MALE = 2;
+    FEMALE = 3;
+}
+
+message UserInfo {
+    optional int32 weight_grams = 1;
+    optional int32 height_cm = 2;
+    optional string date_of_birth = 3;
+    optional Gender gender = 4;
+}
+
+message OneDaysSensorData {
+    optional int64 account_id = 1;
+    optional string date_of_night = 2;
+    repeated TrackerMotion my_motion = 3;
+    repeated TrackerMotion partner_motion = 4;
+    repeated Sample light_lux = 5;
+    repeated Sample waves = 6;
+    repeated Sample audio_peak_disturbance_db = 7;
+    repeated Sample audio_num_disturbances_db = 8;
+    repeated Sample audio_peak_energy = 9;
+  
+    optional UserInfo user_info = 10;
+    repeated Event timeline_feedback = 11;
+    optional HardwareType hardware_type = 12;
+    optional DeviceColor device_color = 13;   
+    optional string sunrise_time = 14;
+    optional string sunset_time = 15;
+}
