@@ -122,6 +122,7 @@ message SyncResponse {
     optional string ring_time_ack = 24;
     optional RoomConditions room_conditions_lights_off = 25;
     optional AudioFeaturesControl audio_features_control = 26; //controls if features get uploaded, rates, etc.
+    optional uint32 lights_off_threshold = 27;
     // TODO: settings for snoring detection
     // TODO: settings for firmware update
 }
