@@ -31,4 +31,5 @@ message SpeechResultsData {
     optional string response_text = 15;
     optional int64 updated = 16;
     optional Action action = 17;
+    optional int32 fw_version = 18;
 }
