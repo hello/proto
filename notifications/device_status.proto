@@ -1,4 +1,4 @@
-option java_package = "com.hello.suripu.workers.protobuf.notifications";
+option java_package = "com.hello.suripu.api.notifications";
 
 message SenseOffline  {
     optional uint64 last_seen_timestamp_millis = 1;     // When did we last see this sense?

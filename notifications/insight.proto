@@ -1,4 +1,4 @@
-option java_package = "com.hello.suripu.workers.protobuf.notifications";
+option java_package = "com.hello.suripu.api.notifications";
 
 message NewInsight {
     optional string date_category = 1; // Range key for this insight

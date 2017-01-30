@@ -7,3 +7,10 @@ message Message {
 	optional string target_date = 2;
 	optional int64 timestamp = 3;
 }
+
+message TriggerMessage {
+	optional int64 account_id = 1;
+	optional string target_date = 2;
+	optional int64 message_created_at = 3;
+	optional int32 lookback_window_in_minutes = 4;
+}
