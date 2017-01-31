@@ -40,11 +40,19 @@ message periodic_data {
         optional int32 lux_count = 6;
         optional int32 uv_count = 7;
     }
+
+    message tvoc_version {
+        optional uint32 tvoc_app_fw_version = 1;
+        optional uint32 tvoc_boot_fw_version = 2;
+        optional uint32 tvoc_hw_version = 3;
+    }
     
     optional light_data light_sensor   = 25;
     optional int32 light_duration_ms   = 26;
 
     optional KeywordStats keyword_stats = 27;
+
+    optional tvoc_version tvoc_ver = 28;
 }
 
 message batched_periodic_data {
