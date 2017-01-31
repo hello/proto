@@ -3,7 +3,7 @@ import "sleep_score.proto";
 import "room_conditions.proto";
 import "device_status.proto";
 
-option java_package = "com.hello.suripu.workers.protobuf.notifications";
+option java_package = "com.hello.suripu.api.notifications";
 option java_outer_classname = "PushNotification";
 
 message GeneralNotification {
@@ -15,6 +15,7 @@ message GeneralNotification {
 message UserPushNotification {
     optional uint64 account_id = 1;
     optional string sense_id = 2;
+    optional uint64 timestamp = 3;
 
     // Place the actual alerts at 100+ so we have room to add more attributes before them without having weird orderings.
     optional PillBatteryLow pill_battery_low = 100;
