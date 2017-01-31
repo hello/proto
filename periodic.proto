@@ -42,9 +42,9 @@ message periodic_data {
     }
 
     message tvoc_version {
-        optional uint32 tvoc_app_fw_version = 1;
-        optional uint32 tvoc_boot_fw_version = 2;
-        optional uint32 tvoc_hw_version = 3;
+        optional uint32 tvoc_app_fw_version = 1; // sensor application firmware version. This field needs to be compared in order to update sensor firmware
+        optional uint32 tvoc_boot_fw_version = 2; // sensor boot firmware version. 
+        optional uint32 tvoc_hw_version = 3; // sensor hardware version. 
     }
     
     optional light_data light_sensor   = 25;
