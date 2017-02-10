@@ -3,12 +3,6 @@ option java_package = "com.hello.alg.api";
 option java_outer_classname = "TimelineSensorDataProtos";
 
 
-message Sample {
-    optional int64 timestamp = 1;
-    optional double value = 2;
-    optional int32 tz_offset = 3;
-}
-
 message TrackerMotion {
     required int64 timestamp = 1;
     required int32 svm_mag = 2;
@@ -58,16 +52,18 @@ message OneDaysSensorData {
     optional string date_of_night = 2;
     repeated TrackerMotion my_motion = 3;
     repeated TrackerMotion partner_motion = 4;
-    repeated Sample light_lux = 5;
-    repeated Sample waves = 6;
-    repeated Sample audio_peak_disturbance_db = 7;
-    repeated Sample audio_num_disturbances_db = 8;
-    repeated Sample audio_peak_energy = 9;
+    repeated int64 sense_timestamps = 5;
+    repeated int32 sense_tz_offsets = 6;
+    repeated float light_lux = 7;
+    repeated float waves = 8;
+    repeated float audio_peak_disturbance_db = 9;
+    repeated float audio_num_disturbances_db = 10;
+    repeated float audio_peak_energy = 11;
   
-    optional UserInfo user_info = 10;
-    repeated Event timeline_feedback = 11;
-    optional HardwareType hardware_type = 12;
-    optional DeviceColor device_color = 13;   
-    optional string sunrise_time = 14;
-    optional string sunset_time = 15;
+    optional UserInfo user_info = 21;
+    repeated Event timeline_feedback = 22;
+    optional HardwareType hardware_type = 23;
+    optional DeviceColor device_color = 24;   
+    optional string sunrise_time = 25;
+    optional string sunset_time = 26;
 }
