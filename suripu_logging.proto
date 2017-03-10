@@ -90,15 +90,16 @@ message ProvisionRequest {
 
 
 //one log message to rule the algs
-//think of it as polymorphism--a lot of the optional fields will not be there 
+//think of it as polymorphism--a lot of the optional fields will not be there
 message TimelineLog {
     enum AlgType {
-        NO_ALGORITHM = 0; 
+        NO_ALGORITHM = 0;
         WUPANG = 1;
         HMM = 2;
         VOTING = 3;
         ONLINE_HMM = 4;
         NEURAL_NET = 5;
+        NEURAL_NET_FOUR_EVENT = 6;
     }
 
     enum SleepEventType {
@@ -121,9 +122,10 @@ message TimelineLog {
         MISSING_KEY_EVENTS = 7;
         INVALID_SLEEP_SCORE = 8;
         NOT_ENOUGH_SLEEP_TIME = 9;
-        UNEXEPECTED = 10; 
+        UNEXEPECTED = 10;
         DATA_GAP_TOO_LARGE = 11;
         EVENTS_OUT_OF_ORDER = 12;
+        NO_MOTION_DURING_SLEEP = 13;
     }
 
     message Prediction {
@@ -146,5 +148,3 @@ message TimelineLog {
     optional string night_of = 12;
     optional int64 test_group = 13;
 }
-
-
