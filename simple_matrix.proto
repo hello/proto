@@ -22,4 +22,6 @@ message SimpleMatrix {
     repeated bytes payload = 4;
     optional string device_id = 5;
     optional bool is_col_major = 6;
+    optional int64 timestamp_utc_millis = 7;
+    optional int32 tz_offset_millis = 8;
 }
