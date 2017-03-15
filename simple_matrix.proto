@@ -4,8 +4,16 @@ option java_package = "com.hello.suripu.api.audio";
 option java_outer_classname = "SimpleMatrixProtos";
 
 enum SimpleMatrixDataType {
-    SINT8 = 0;
+    SINT8 = 0;   //char
+    SINT16 = 1;  //short
+    SINT32 = 2;  //int
+    SINT64 = 3;  //longlong
+    FLOAT32 = 4; //float
+    FLOAT64 = 5; //double
+    COMPLEXFLOAT64 = 6; //std::complex<float>
+    COMPLEXFLOAT128 = 7;//std::complex<double>
 }
+
 
 message SimpleMatrix {
     optional string id = 1;
@@ -13,4 +21,5 @@ message SimpleMatrix {
     optional SimpleMatrixDataType data_type = 3;
     repeated bytes payload = 4;
     optional string device_id = 5;
+    optional bool is_col_major = 6;
 }
