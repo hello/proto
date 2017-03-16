@@ -1,0 +1,10 @@
+package novelda;
+
+option java_package = "com.hello.sati.novelda";
+option java_outer_classname = "Radar";
+
+message RadarFrame {
+    optional uint32 frame_id = 1;
+    repeated double range_bins = 2;
+    optional bool base_band = 3;
+}
