@@ -1,0 +1,16 @@
+
+package hello;
+
+option java_package = "com.hello.sati.radarmessages";
+option java_outer_classname = "RadarMessages";
+
+message FeatureVector {
+    optional string id = 1;
+    optional string device_id = 2;
+    repeated float floatfeats = 3;
+    optional int64 sequence_number = 4; 
+}
+
+
+
+
