@@ -128,6 +128,7 @@ message TimelineLog {
         NO_MOTION_DURING_SLEEP = 13;
         IN_BED_EVENT_OUTSIDE_SLEEP_PERIOD = 14;
         MOTION_GAP_TOO_LARGE = 15;
+        IMPROBABLE_SLEEP_PERIOD = 16;
     }
 
     message Prediction {
