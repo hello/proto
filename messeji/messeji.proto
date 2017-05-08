@@ -8,6 +8,16 @@ message ReceiveMessageRequest {
     repeated int64 message_read_id = 2;
 }
 
+message LedDemo {
+    enum Animation {
+	SPIN = 0;
+	GLOW = 1;
+     }
+     uint8 r=1;
+     uint8 g=2;
+     uint8 b=3;
+     Animation animation=4;
+}
 
 message Message {
 
@@ -36,6 +46,8 @@ message Message {
     optional VoiceControl voice_control = 8;
 
     optional RemoteApiControl remote_api_control = 9;
+
+    optional LedDemo led_demo = 10;
 }
 
 
