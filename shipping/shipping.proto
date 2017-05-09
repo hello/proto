@@ -31,3 +31,18 @@ message Order {
     optional string shipping_phone_number = 17;
     optional string shipping_phone_number_country_code = 18;
 }
+
+
+message OrderRequest {
+    optional Order order = 1;
+}
+
+message OrderResponse {
+    enum Result {
+        SUCCESS = 1;
+        ERROR = 2;
+    }
+    optional Result result = 1;
+    optional string order_id = 2;
+    optional string message = 3;
+}
