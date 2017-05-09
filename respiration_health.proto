@@ -1,0 +1,21 @@
+syntax = "proto2";
+package hello;
+
+option java_package = "is.hellos.demos.models.protos";
+option java_outer_classname = "RespirationHealth";
+
+enum ResiprationHealthState {
+  NOBODY_PRESENT = 0;
+  PERSON_IS_PRESENT = 1;
+  PERSON_IS_PRESENT_NOT_BREATHING = 2;
+}
+
+message RespirationStatus {
+    optional string device_id = 1;
+    optional ResiprationHealthState health_state = 2;
+    optional int64 timestamp = 3;
+}
+
+
+
+
