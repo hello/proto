@@ -1,4 +1,5 @@
 option java_package = "com.hello.haneda.api";
+option go_package = "haneda";
 
 message Ack {
 

@@ -1,4 +1,5 @@
 option java_package = "com.hello.suripu.api.input";
+option go_package = "api";
 
 message AudioState {
     required bool playing_audio = 1;

@@ -1,7 +1,8 @@
-//package hello;
+package hello;
 
 option java_package = "com.hello.suripu.api.logging";
 option java_outer_classname = "LogProtos";
+option go_package = "api";
 //Logging protobuf to send to server
 
 enum LogType {

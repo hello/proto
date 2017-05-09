@@ -1,4 +1,5 @@
 option java_package = "com.hello.messeji.api";
+option go_package = "messeji";
 
 message StopAudio {
     required uint32 fade_out_duration_seconds = 1;

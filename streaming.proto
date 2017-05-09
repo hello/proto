@@ -1,5 +1,5 @@
 option java_package = "com.hello.haneda.api";
-
+option go_package = "haneda";
 message Preamble {
     enum pb_type {
         ACK = 0;
@@ -8,6 +8,10 @@ message Preamble {
         SYNC_RESPONSE = 3;
         MATRIX_CLIENT_MESSAGE = 4;
         MESSEJI = 5;
+        FILE_MANIFEST = 6;
+        SENSE_STATE = 7;
+        MORPHEUS_COMMAND = 8;
+        BATCHED_PILL_DATA = 9;
     }
     enum auth_type {
         NO_AUTH = 0;                                //no authentication, reserved 0 bytes

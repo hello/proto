@@ -2,6 +2,7 @@
 
 option java_package = "com.hello.suripu.api.output";
 option java_outer_classname = "OutputProtos";
+option go_package = "api";
 
 import "audio_control.proto";
 import "audio_features_control.proto";
